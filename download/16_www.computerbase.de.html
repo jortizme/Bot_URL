@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark">
+	<title>ComputerBase</title>
+	<style>@charset "UTF-8";:root{--color:#222;--bgcolor:#fff;--heading-color:#2c5b9c;--header-bgcolor:#2c5b9c;--header-border:#2c5b9c;--header-highlight:#416ba6;--subheader-bgcolor:#18355f;--mainmenu-button-color:#1b4a8b;--menu-color:#bcdef5;--menu-bgcolor:rgba(20,20,20,0.15);--tagnav-color:#859dbd;--forum-box-bgcolor:#2c5b9c;--footer-box:#20467e;--footer-box-highlight:#1a3866;--gallery-button-color:#2c5b9c;--gallery-button-hover-color:#18355f;--image-placeholder-bgcolor:#b7b7b7;--outline-color:#2c5b9c;--mark-bgcolor:#fff8cc;--forum-block-bgcolor:#ececec;--gray0:#333;--gray0a:#444;--gray1:#666;--gray1a:#777;--gray1b:#999;--gray1c:#aaa;--gray2:#bbb;--gray2a:#ccc;--gray2b:#ddd;--gray2c:#e8e8e8;--gray3:#e5e5e5;--gray3a:#eee;--gray3b:#f1f1f1;--gray3c:#f7f7f7;--row-new:#d4f2b3;--row-highlight:#d0def2;--row-notice:#fddeaa;--row-error:#f6c4c8}:root.dark-mode{--color:#d7d7d7;--bgcolor:#121212;--heading-color:#e0e0e0;--header-bgcolor:#121212;--header-border:#333;--header-highlight:#333;--subheader-bgcolor:#000;--mainmenu-button-color:#333;--menu-color:#e0e0e0;--menu-bgcolor:#000;--tagnav-color:#e0e0e0;--forum-box-bgcolor:#303030;--footer-box:#333;--footer-box-highlight:#444;--gallery-button-color:#e84d0e;--gallery-button-hover-color:#f47e4e;--image-placeholder-bgcolor:#626262;--outline-color:#e84d0e;--mark-bgcolor:#444;--forum-block-bgcolor:#222;--gray0:#d8d8d8;--gray0a:#ccc;--gray1:#b1b1b1;--gray1a:#a2a2a2;--gray1b:#818181;--gray1c:#707070;--gray2:#5e5e5e;--gray2a:#4c4c4c;--gray2b:#393939;--gray2c:#2c2c2c;--gray3:#303030;--gray3a:#262626;--gray3b:#222;--gray3c:#1b1b1b;--row-new:#2e4d0d;--row-highlight:#1b3860;--row-notice:#5e3b03;--row-error:#77111a}:root.dark-mode .article__title,:root.dark-mode .footer1__heading,:root.dark-mode .h2,:root.dark-mode .h3,:root.dark-mode .teaser__title,:root.dark-mode .text-h2,:root.dark-mode .text-h3{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (prefers-color-scheme:dark){:root:not(.light-mode){--color:#d7d7d7;--bgcolor:#121212;--heading-color:#e0e0e0;--header-bgcolor:#121212;--header-border:#333;--header-highlight:#333;--subheader-bgcolor:#000;--mainmenu-button-color:#333;--menu-color:#e0e0e0;--menu-bgcolor:#000;--tagnav-color:#e0e0e0;--forum-box-bgcolor:#303030;--footer-box:#333;--footer-box-highlight:#444;--gallery-button-color:#e84d0e;--gallery-button-hover-color:#f47e4e;--image-placeholder-bgcolor:#626262;--outline-color:#e84d0e;--mark-bgcolor:#444;--forum-block-bgcolor:#222;--gray0:#d8d8d8;--gray0a:#ccc;--gray1:#b1b1b1;--gray1a:#a2a2a2;--gray1b:#818181;--gray1c:#707070;--gray2:#5e5e5e;--gray2a:#4c4c4c;--gray2b:#393939;--gray2c:#2c2c2c;--gray3:#303030;--gray3a:#262626;--gray3b:#222;--gray3c:#1b1b1b;--row-new:#2e4d0d;--row-highlight:#1b3860;--row-notice:#5e3b03;--row-error:#77111a}:root:not(.light-mode) .article__title,:root:not(.light-mode) .footer1__heading,:root:not(.light-mode) .h2,:root:not(.light-mode) .h3,:root:not(.light-mode) .teaser__title,:root:not(.light-mode) .text-h2,:root:not(.light-mode) .text-h3{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}}@font-face{font-display:swap;font-family:cbsans;font-style:normal;font-weight:400;src:url(/fonts/cbsans/cbsans-regular.woff2) format("woff2"),url(/fonts/cbsans/cbsans-regular.woff) format("woff")}@font-face{font-display:swap;font-family:cbsans;font-style:normal;font-weight:700;src:url(/fonts/cbsans/cbsans-bold.woff2) format("woff2"),url(/fonts/cbsans/cbsans-bold.woff) format("woff")}@font-face{font-display:swap;font-family:cbsans;font-style:italic;font-weight:400;src:url(/fonts/cbsans/cbsans-italic.woff2) format("woff2"),url(/fonts/cbsans/cbsans-italic.woff) format("woff")}@font-face{font-display:swap;font-family:cbsans;font-style:italic;font-weight:700;src:url(/fonts/cbsans/cbsans-bolditalic.woff2) format("woff2"),url(/fonts/cbsans/cbsans-bolditalic.woff) format("woff")}.article-comment__date,.article__comments-link,.article__date,.debug-list,.menu1__button[data-badge]:after,.ticker__date{-webkit-font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";font-feature-settings:"tnum"}@media (min-width:62.5em){.article-comment__date,.article__comments-link,.article__date,.debug-list,.menu1__button[data-badge]:after,.ticker__date{-webkit-font-feature-settings:"kern","tnum";-moz-font-feature-settings:"kern","tnum";font-feature-settings:"kern","tnum"}}.w-0{width:0}.w-1{width:1%}.w-2{width:2%}.w-3{width:3%}.w-4{width:4%}.w-5{width:5%}.w-6{width:6%}.w-7{width:7%}.w-8{width:8%}.w-9{width:9%}.w-10{width:10%}.w-11{width:11%}.w-12{width:12%}.w-13{width:13%}.w-14{width:14%}.w-15{width:15%}.w-16{width:16%}.w-17{width:17%}.w-18{width:18%}.w-19{width:19%}.w-20{width:20%}.w-21{width:21%}.w-22{width:22%}.w-23{width:23%}.w-24{width:24%}.w-25{width:25%}.w-26{width:26%}.w-27{width:27%}.w-28{width:28%}.w-29{width:29%}.w-30{width:30%}.w-31{width:31%}.w-32{width:32%}.w-33{width:33%}.w-34{width:34%}.w-35{width:35%}.w-36{width:36%}.w-37{width:37%}.w-38{width:38%}.w-39{width:39%}.w-40{width:40%}.w-41{width:41%}.w-42{width:42%}.w-43{width:43%}.w-44{width:44%}.w-45{width:45%}.w-46{width:46%}.w-47{width:47%}.w-48{width:48%}.w-49{width:49%}.w-50{width:50%}.w-51{width:51%}.w-52{width:52%}.w-53{width:53%}.w-54{width:54%}.w-55{width:55%}.w-56{width:56%}.w-57{width:57%}.w-58{width:58%}.w-59{width:59%}.w-60{width:60%}.w-61{width:61%}.w-62{width:62%}.w-63{width:63%}.w-64{width:64%}.w-65{width:65%}.w-66{width:66%}.w-67{width:67%}.w-68{width:68%}.w-69{width:69%}.w-70{width:70%}.w-71{width:71%}.w-72{width:72%}.w-73{width:73%}.w-74{width:74%}.w-75{width:75%}.w-76{width:76%}.w-77{width:77%}.w-78{width:78%}.w-79{width:79%}.w-80{width:80%}.w-81{width:81%}.w-82{width:82%}.w-83{width:83%}.w-84{width:84%}.w-85{width:85%}.w-86{width:86%}.w-87{width:87%}.w-88{width:88%}.w-89{width:89%}.w-90{width:90%}.w-91{width:91%}.w-92{width:92%}.w-93{width:93%}.w-94{width:94%}.w-95{width:95%}.w-96{width:96%}.w-97{width:97%}.w-98{width:98%}.w-99{width:99%}.w-100{width:100%}*{-moz-box-sizing:border-box;box-sizing:border-box}html{background:#2c5b9c;background:var(--header-bgcolor)}html:not(.desktop-layout){touch-action:manipulation}body{background:#fff;background:var(--bgcolor);color:#222;color:var(--color);font:1em/1.375 cbsans,arial,sans-serif;margin:0;overflow-y:scroll;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}@media (min-width:62.5em){body{-webkit-font-feature-settings:"kern";-moz-font-feature-settings:"kern";font-feature-settings:"kern"}}.no-webfont body{font-family:arial,sans-serif}h1,h2{-webkit-font-feature-settings:"kern";-moz-font-feature-settings:"kern";font-feature-settings:"kern"}iframe,img{border:0}button,input,select,textarea{font-family:inherit;font-size:inherit}textarea{overflow:auto}input[type=checkbox],input[type=radio]{margin:-2px 3px 0 5px;vertical-align:middle}main{display:block}blockquote,figure,h1,h2,h3,h4,h5,h6{margin:0;padding:0}a:active,a:hover{outline:0}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}code,kbd,pre,samp{font-family:monospace,monospace}abbr[title]{-webkit-text-decoration:underline dotted;-moz-text-decoration:underline dotted;text-decoration:underline dotted}a{color:#e84d0e;text-decoration:none}a:hover{text-decoration:underline}.stealth-link{color:inherit}.external-link{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='11' viewBox='0 0 10 11'%3E%3Cpath d='M4.5 3.5h-4v6h6v-4' fill='transparent' stroke='%23e84d0e'/%3E%3Cpath d='M4.5.5h5v5L9 6 7.5 4.5l-3 3-2-2 3-3L4 1z' fill='transparent' stroke='%23e84d0e' stroke-width='1.001'/%3E%3C/svg%3E") no-repeat 100%;padding-right:.75rem}html:not(.no-visited-links) .visited-link:visited,html:not(.no-visited-links) .visited-link:visited .article__update{color:#647080}:target:before{content:"";display:block;height:3rem;margin-top:-3rem;width:0}@media (min-width:45em){:target:before{height:3.75rem;margin-top:-3.75rem}}.main{background:#f1f1f1;background:var(--gray3b);position:relative}.block1{min-width:320px;padding:0 env(safe-area-inset-right) 0 env(safe-area-inset-left)}@media (min-width:70em){.block1{min-width:62.5em;padding-right:160px}@supports (padding-right:env(safe-area-inset-right)){.block1{padding-right:calc(160px + env(safe-area-inset-right))}}}.block1--ads,.block1--default{background:#f1f1f1;background:var(--gray3b)}.block1--breakout,.block1--breakout-2,.block1--highlight{background:#ddd;background:var(--gray2b)}.block1--highlight{position:relative;z-index:3}.block1--top{background:#fff;background:var(--bgcolor)}@media (min-width:62.5em){.block1--top{background:#f1f1f1;background:var(--gray3b)}.block1--top:before{background:#ddd;background:var(--gray2b);content:"";display:block;height:21.25em;position:absolute;width:100%}}.block1--fullwidth{background:#222;color:#fff}.wrapper{position:relative}@media (min-width:62.5em){.wrapper{margin:0 auto;width:62.5em}}.block1--default .wrapper{background:#fff;background:var(--bgcolor)}.block1--breakout .wrapper,.block1--highlight .wrapper{background:#e5e5e5;background:var(--gray3)}.header-row,.irow-aside,.irow-main,.row,.row-aside,.row-main{padding:.625em;position:relative}@media (min-width:31.25em){.header-row,.irow-aside,.irow-main,.row,.row-aside,.row-main{padding:2%}}.header-row{padding-bottom:0;padding-top:0}.row-aside,.row-main{padding-bottom:0;padding-top:1.875em}@media (min-width:62.5em){.irow-main,.row-main{float:left;padding-right:0;width:39.375em}}@media (min-width:62.5em){.row-main{width:40.625em}}@media (max-width:62.49em){.irow-aside,.row-aside{padding-top:0}}@media (min-width:37.375em) and (max-width:62.49em){.irow-aside,.row-aside{display:table;width:100%}}@media (min-width:62.5em){.irow-aside,.row-aside{float:right;width:18.75em}}@media (min-width:62.5em){.row-aside{width:21.25em}}.irow-main{padding:0 0 1.25em}@media (min-width:62.5em){.irow-main{padding-bottom:0}}.irow-aside{padding:0}@media (min-width:37.375em) and (max-width:62.49em){.row-aside-group{display:table-cell;vertical-align:top;width:50%}.row-aside-group+.row-aside-group{border-left:.625em solid transparent}}.row-13{border-top:1px solid #bbb;border-top:1px solid var(--gray2);display:block}@media (min-width:45em){.row-13{border-left:1px solid #bbb;border-left:1px solid var(--gray2);border-top:0;float:left;width:33.3333%}}.row-13:first-child{border:0}.padding-0{padding-bottom:0;padding-top:0}.padding-2,.padding-3{padding-top:1.25em}.padding-3{padding-bottom:1.25em}@media (min-width:37.375em){.padding-3{padding-bottom:1.875em;padding-top:1.875em}}.box{margin-bottom:1.25em;position:relative}.header-wrapper{height:3em}@media (min-width:45em){.header-wrapper{background:#2c5b9c;background:var(--header-bgcolor);height:5rem}}.skip-link{background:#222;background:var(--color);color:#fff;color:var(--bgcolor);left:1em;line-height:1;padding:.5em 1em;position:absolute;top:0}.skip-link:not(:focus){left:-9999em;position:absolute}.header{background:#2c5b9c;background:var(--header-bgcolor);border-bottom:1px solid #2c5b9c;border-bottom:1px solid var(--header-border);box-shadow:0 0 15px rgba(0,0,0,.3);height:3em;left:0;position:fixed;right:0;top:0;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:120051}@media (min-width:45em){.header{border-bottom:0;height:3.5rem}.header:not(.header--2){box-shadow:none;z-index:100051}}.headermeta,.ios7-no-fixed-header .header,.no-fixed-header .header{position:absolute}.headermeta{right:0;top:0}@media (min-width:62.5em){.headermeta{right:1.25rem}}.subheader{display:none}@media (min-width:45em){.subheader{background:#18355f;background:var(--subheader-bgcolor);box-shadow:0 10px 10px -10px rgba(0,0,0,.5);display:block;height:1.5rem;left:0;line-height:1.5rem;overflow:hidden;position:absolute;right:0;top:3.5rem;z-index:100050}}@media (min-width:62.5em){.subheader:before{background:#2c5b9c;background:var(--header-bgcolor);content:"";height:1.5rem;left:0;position:absolute;right:50%;top:0}}.homepage-link{-moz-box-sizing:content-box;box-sizing:content-box;display:block;font-size:1rem;margin:0 auto;padding:.4375em;width:4.875em}@media (min-width:45em){.homepage-link{float:left;padding:7px 15px 7px 0;width:97px}}@media (min-width:62.5em){.homepage-link{padding:.5em .9375em .5em 0;-webkit-transform-origin:0 .3125em;transform-origin:0 .3125em;-webkit-transition:-webkit-transform .1s;transition:-webkit-transform .1s;transition:transform .1s;transition:transform .1s,-webkit-transform .1s;width:9.1875em}.header--1 .homepage-link{-webkit-transform:scale(.66);transform:scale(.66)}}.homepage-link img{display:block;height:auto;width:100%}.mainmenu-button{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='31' viewBox='0 0 32 31'%3E%3Cg stroke='%23fff' stroke-width='3'%3E%3Cpath d='M4 9.5h24M4 15.5h24M4 21.5h24'/%3E%3C/g%3E%3C/svg%3E") no-repeat 50%;background-size:2em 1.9375em;border:1px solid #1b4a8b;border:1px solid var(--mainmenu-button-color);border-radius:.1875em;-moz-box-sizing:content-box;box-sizing:content-box;display:block;height:1.9375em;overflow:hidden;padding:0 2%;position:absolute;text-indent:400%;top:.5em;white-space:nowrap;width:2em}@media (min-width:45em){.mainmenu-button{display:none}}.mainmenu-button[aria-expanded=true]{background-color:#1b4a8b;background-color:var(--mainmenu-button-color);border-color:#1b4a8b;border-color:var(--mainmenu-button-color)}@media (max-width:44.99em){.mainmenu-panel{background:#2c5b9c;background:var(--header-bgcolor);border-top:1px solid #2c5b9c;border-top:1px solid var(--header-bgcolor);height:-webkit-calc(100vh - 3em);height:calc(100vh - 3em);left:-100%;-webkit-overflow-scrolling:touch;overflow-y:scroll;position:absolute;top:2.9375em;-webkit-transition:-webkit-transform .3s ease-out;transition:-webkit-transform .3s ease-out;transition:transform .3s ease-out;transition:transform .3s ease-out,-webkit-transform .3s ease-out;width:100%;will-change:transform}.mainmenu-panel.toggle--expanded,.mainmenu-panel:target{-webkit-transform:translateX(100%);transform:translateX(100%)}}@media (min-width:45em){.mainmenu-panel{margin-right:91px}}@media (min-width:62.5em){.mainmenu-panel{margin-right:111px}}.mainmenu-nav{padding:.75em 0}@media (min-width:45em){.mainmenu-nav{padding:0}}@media (min-width:62.5em){.mainmenu-nav{-webkit-transition:-webkit-transform .1s;transition:-webkit-transform .1s;transition:transform .1s;transition:transform .1s,-webkit-transform .1s}.header--1 .mainmenu-nav{-webkit-transform:translateX(-50px);transform:translateX(-50px)}}.mainmenu-nav>ul,.mainmenu-nav>ul>li{display:block;margin:0;padding:0}.mainmenu__a{color:#fff;display:block;font-weight:700;padding:.625em}@media (min-width:45em){.mainmenu__a{border:0;float:left;font-size:.875em;font-weight:400;line-height:3.5rem;padding:0 .5em;position:relative;text-align:center}}@media (min-width:48em){.mainmenu__a{padding:0 .6em}}@media (min-width:56.25em){.mainmenu__a{font-size:1em}}.mainmenu__a:hover,.mainmenu__a[aria-expanded=true]{background-color:#416ba6;background-color:var(--header-highlight);color:#fff;text-decoration:none}@media (max-width:44.99em){.mainmenu__a.mainmenu__a--selected{background-color:#fff;color:#2c5b9c;color:var(--header-bgcolor)}}.mainmenu__a--tags{display:none}@media (min-width:45em){.mainmenu__a--tags{display:block;position:relative}.mainmenu__a--tags:after{border:4px solid transparent;border-top-color:#fff;bottom:.4em;content:"";height:0;left:50%;margin-left:-3px;opacity:0;position:absolute;-webkit-transition:opacity .3s;transition:opacity .3s;width:0}.mainmenu__a--tags:hover:after,.mainmenu__a--tags[aria-expanded=true]:after{opacity:1}}.mainmenu__a--forum{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='16' viewBox='0 0 36 32'%3E%3Cpath d='M25 0c2 0 3 1 3 3v10c0 2-1 3-3 3H13l-9 8v-8H3c-2 0-3-1-3-3V3c0-2 1-3 3-3zm8 6c2 0 3 1 3 3v12c0 2-1 3-3 3h-5v8l-10-8h-6v-4h7.5l6.5 5.5V20h6V10h-2V6z' fill='%23fff'/%3E%3C/svg%3E") no-repeat 3.75em .75rem;padding-right:1.6875em}.mainmenu__sub{margin:0;padding:0}@media (min-width:45em){.mainmenu__sub{display:none}}.mainmenu__sub li{display:block}.mainmenu__sub-a{color:#fff;display:block;font-size:.875em;padding:.5rem .625rem}.mainmenu__sub-a:hover{background-color:#416ba6;background-color:var(--header-highlight);color:#fff;text-decoration:none}.mainmenu__sub-a-lvl2{text-indent:1em}.tags-menu{margin:0;padding:0}@media (max-width:44.99em){.tags-menu{border-top:1px solid hsla(0,0%,100%,.15);display:block;padding:.75em 0}}@media (min-width:45em){.tags-menu{background:#2c5b9c;background:var(--header-bgcolor);border-radius:.25em;box-shadow:0 0 28px 2px rgba(0,0,0,.33);-webkit-columns:2;-moz-columns:2;column-count:2;left:10.1875em;padding:.6875em;position:absolute;top:4.25em;width:23em}}.tags-menu li{display:block}.tags-menu__a{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;color:#e0e0e0;display:block;padding:.5em .625em}.tags-menu__a:hover{background:#416ba6;background:var(--header-highlight);text-decoration:none}.tags-menu__a:before{color:#fff;content:"# ";font-weight:700}.tags-menu__a--all:before{content:"…";margin:0 2px 0 -2px}.body--mainmenu-open{overflow:hidden}.menu1{border-radius:.25rem;float:left;margin-top:.375rem;position:relative}@media (min-width:45em){.menu1{background-color:rgba(20,20,20,.15);background-color:var(--menu-bgcolor);margin-top:.625rem}.menu1:last-child{margin-left:7.5px}}.menu1__button{color:#bcdef5;color:var(--menu-color);display:block;float:left;font-size:.9375em;padding:.5rem .625rem;position:relative}.menu1__button:first-of-type{border-radius:.25rem 0 0 .25rem}.menu1__button:last-of-type{border-radius:0 .25rem .25rem 0}@media (max-width:22.49em){.menu1__button{padding-left:.4375rem;padding-right:.4375rem}}@media (min-width:45em){.menu1__button:not(:first-child){border-left:1px solid rgba(20,20,20,.15)}}.menu1__button[data-badge]:before{opacity:1}.menu1__button:hover,.menu1__button[aria-expanded=true]{background-color:rgba(7,7,7,.15);text-decoration:none}.menu1__button:hover:before,.menu1__button[aria-expanded=true]:before{opacity:1}.menu1__button--icon:before{background-position:50%;background-repeat:no-repeat;background-size:15px;content:"";display:inline-block;height:1.1875rem;vertical-align:top;width:.9375rem}.dark-mode .menu1__button--icon:before{-webkit-filter:grayscale(100%);filter:grayscale(100%)}@media (prefers-color-scheme:dark){:root:not(.light-mode) .menu1__button--icon:before{-webkit-filter:grayscale(100%);filter:grayscale(100%)}}.menu1__button--user{line-height:1.5rem;max-width:7.5rem;overflow:hidden;padding:.375rem;text-overflow:ellipsis;white-space:nowrap}.menu1__button--search:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7a23.9 23.9 0 0033.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z' fill='%23bcdef5'/%3E%3C/svg%3E")}@media (min-width:62.5em){.menu1__button--search:before{margin-right:4px}}.menu1__button--conversations:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z' fill='%23bcdef5'/%3E%3C/svg%3E")}@media (min-width:37.375em){.menu1__button--conversations:before{opacity:.6}}.menu1__button--alerts:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M224 512a63.99 63.99 0 0063.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32a32 32 0 00-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29A31.24 31.24 0 000 384c.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32a31.23 31.23 0 00-8.61-21.71z' fill='%23bcdef5'/%3E%3C/svg%3E");background-size:13px 15px}@media (min-width:37.375em){.menu1__button--alerts:before{opacity:.6}}@media (max-width:62.49em){.menu1__button--register{display:none}}.menu1__button[data-badge]:after{background:#e03030;border-radius:.125rem;color:#fff;content:attr(data-badge);display:inline-block;font-family:arial,sans-serif;font-size:.625rem;left:.25rem;line-height:.6875rem;padding:.0625rem .1875rem;position:absolute;top:.375rem}.menu1__button--user[data-badge]:after{top:.25rem}.menu1__avatar{border-radius:2px;display:inline-block;overflow:hidden;vertical-align:top}.menu1__avatar-dynamic{font-family:Arial,sans-serif;font-size:.875rem;height:1.5rem;text-align:center;width:1.5rem}.menu1__avatar-dynamic,.menu1__avatar-image{border-radius:inherit;display:block}@media (max-width:62.49em){.menu1__label{display:none}}.menu1__panel{background:#ddd;background:var(--gray2b);border-radius:4px;box-shadow:0 0 28px 2px rgba(0,0,0,.33);padding:11px;position:absolute;right:0;top:2.9375rem}@media (min-width:62.5em){.menu1__panel{top:2.75rem}}.menu1__panel:after{border:12px inset transparent;border-bottom:12px solid #ddd;border-bottom:12px solid var(--gray2b);border-top:0;bottom:100%;content:"";height:0;position:absolute;right:0;width:0}@media (min-width:45em){.menu1__panel:after{right:6px}}.menu1__panel--alerts:after{margin-right:.375rem}@media (min-width:45em){.menu1__panel--alerts:after{margin-right:0}}.menu1__panel--conversations:after{margin-right:2.5rem}@media (min-width:45em){.menu1__panel--conversations:after{margin-right:2.25rem}}.menu1__panel--user:after{margin-right:4.75rem}@media (min-width:45em){.menu1__panel--user:after{margin-right:4.5625rem}}@media (min-width:62.5em){.menu1__panel--user:after{margin-right:6.0625rem}}.menu1__panel--search:after{margin-right:.1875rem}@media (min-width:45em){.menu1__panel--search:after{margin-right:0}}@media (min-width:62.5em){.menu1__panel--search:after{margin-right:1.375rem}}.menu1__panel li+li{margin-top:4px}.backend-link{border:1px solid;border-radius:.25em;color:#18355f;opacity:0;padding:.5em 0;position:absolute;right:-6em;text-align:center;top:.5em;-webkit-transition:opacity .5s;transition:opacity .5s;width:6em}@media (max-width:70em){.backend-link{display:none}}.backend-link:hover{color:#18355f;opacity:.2;text-decoration:none}@media (max-width:44.99em){.tagnav{background:rgba(0,0,0,.2);border-top:1px solid hsla(0,0%,100%,.2);padding-bottom:3em;text-align:center}}@media (min-width:62.5em){.tagnav{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='24' viewBox='0 0 960 24'%3E%3Cpath d='M92 24c60 0 40-24 100-24h768v24z' fill='%2318355f'/%3E%3C/svg%3E") repeat-y;padding-left:10.75rem}.dark-mode .tagnav{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='24' viewBox='0 0 960 24'%3E%3Cpath d='M92 24c60 0 40-24 100-24h768v24z'/%3E%3C/svg%3E")}}@media (min-width:62.5em) and (prefers-color-scheme:dark){:root:not(.light-mode) .tagnav{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='24' viewBox='0 0 960 24'%3E%3Cpath d='M92 24c60 0 40-24 100-24h768v24z'/%3E%3C/svg%3E")}}@media (min-width:45em){.mainmenu-panel .tagnav{display:none}}.tagnav__ul{margin:0;padding:.5em}@media (min-width:45em){.tagnav__ul{display:-webkit-box;display:-webkit-flex;display:flex;font-size:.75em;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;padding:0}}@media (min-width:62.5em){.tagnav__ul{font-size:.8125em}}.tagnav__a,.tagnav__li{display:inline-block}.tagnav__a{color:#859dbd;color:var(--tagnav-color);white-space:nowrap}@media (max-width:44.99em){.tagnav__a{margin:0 .2em}}.tagnav__a:before{color:#e0e0e0;content:"»";display:inline-block;font-weight:700;padding-right:.125rem}.tagnav__a:hover{color:#e84d0e;text-decoration:none}.tagnav__a:hover:before{color:#e84d0e}.block1--ads{overflow-anchor:none}.adbox-rectangle:before,.adsbygoogle--banner:before,.adsbygoogle--skyscraper:before,.content-list__ad-label{color:#666;color:var(--gray1);font-size:.625em;letter-spacing:.1em;line-height:1;text-transform:uppercase}.adbox-rectangle:before,.adsbygoogle--banner:before,.adsbygoogle--skyscraper:before{content:"Anzeige";margin-top:1px;position:absolute;right:0;top:-1em}.adbox-skyscraper{display:none}.adbox-rectangle{background:#e5e5e5;background:var(--gray3);contain:layout size style;height:250px;margin:0 auto;position:relative;width:300px;z-index:1}.adbox-rectangle--xl{contain:none;height:auto}.adbox-banner{display:none}@media (min-width:48em){.adbox-banner{-moz-box-sizing:content-box;box-sizing:content-box;display:block;min-height:90px;overflow:hidden;padding:1.25em 0;position:relative;text-align:center;z-index:2}}@media (min-width:70em){.adbox-banner{overflow:visible}}.adbox-banner--reserve-xl{min-height:100px;padding:.625em 0!important}@media (min-width:48em){.adbox-banner--reserve-xl{min-height:250px}}@media (min-width:70em){.adbox-skyscraper{display:block;left:-webkit-calc((100% + 62.5em - 160px)/2);left:calc((100% + 62.5em - 160px)/2);position:absolute;z-index:5}.adbox-skyscraper--sticky{height:1px;position:-webkit-sticky;position:sticky;top:3.5rem;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.block1--ads-gray{background:#ddd;background:var(--gray2b)}.ads-bgcolor{padding-right:160px}.ads-bgcolor .footer,.ads-bgcolor .main{background:none;margin:0 auto;width:62.5em}.ads-bgcolor .footer .block1,.ads-bgcolor .main .block1{padding-right:0}.ads-bgcolor .block1--ads{background:none}.ads-fireplace .adbox-banner,.ads-wallpaper .adbox-banner{padding:0;z-index:4}}@media (min-width:70em) and (max-width:116.865em){.ads-fireplace,.ads-fireplace .block1{padding-right:0}}.ads-bgclick-anchor{display:block;height:200vh;position:absolute;width:100%}.ads-fireplace{background-position:50% 80px!important}@media (min-width:116.875em){.ads-fireplace{background-position:-webkit-calc(50% - 80px) 80px!important;background-position:calc(50% - 80px) 80px!important}}.adsbygoogle{display:inline-block;position:relative;vertical-align:top}.adsbygoogle--banner{height:90px;max-width:728px;width:100%}.adsbygoogle--rectangle{height:250px;width:300px}.adsbygoogle--skyscraper{height:600px;width:300px}.adsbygoogle--content-footer{height:4.875em;overflow:hidden;width:100%}.adsbygoogle--in-article{display:block}.adbox iframe{vertical-align:top}@media (min-width:48em){.adbox iframe{display:block;margin:0 auto}}.adbox-special{position:absolute;top:0}@media (max-width:37.365em){.row-aside-group--homepage-rectangle:before{border-top:1px solid #e5e5e5;border-top:1px solid var(--gray3);content:"";display:block;margin:-4px -10px 0;padding-top:26px}}.article-preview-rectangle-placeholder{background:#eee;background:var(--gray3a);color:#666;color:var(--gray1);height:250px;padding:16px}.article-preview-rectangle-placeholder:before{content:"Rectangle-Platzhalter"}.box--sidebar{background:#e5e5e5;background:var(--gray3);border:1px solid transparent;padding:12px 15px}.box--sidebar .h2{margin:0 0 .35em}.box--sidebar .h2--margin-0{margin:0}.box-white{background:#fff;background:var(--bgcolor);border-color:#bbb;border-color:var(--gray2)}.box--blue{background:#2c5b9c;background:var(--forum-box-bgcolor);color:#fff;color:var(--bgcolor)}.box--blue .icon,.box--blue a,.box--blue h2,.box--blue time{color:#fff!important}@media (min-width:37.375em){.h2--forum-box{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='16' viewBox='0 0 36 32'%3E%3Cpath d='M25 0c2 0 3 1 3 3v10c0 2-1 3-3 3H13l-9 8v-8H3c-2 0-3-1-3-3V3c0-2 1-3 3-3zm8 6c2 0 3 1 3 3v12c0 2-1 3-3 3h-5v8l-10-8h-6v-4h7.5l6.5 5.5V20h6V10h-2V6z' fill='%23fff'/%3E%3C/svg%3E") no-repeat 100% 0;background-size:27px 24px}}.h1,.text-h1{color:#2c5b9c;color:var(--heading-color);font-size:1.5em;line-height:1.125;margin-bottom:.4em}@media (min-width:37.375em){.h1,.text-h1{font-size:1.75em}}@media (min-width:45em){.h1,.text-h1{font-size:2em}}.h2,.h3,.text-h2,.text-h3,.text-h4{color:#2c5b9c;color:var(--heading-color);font-size:1.25em;line-height:1.25;margin-bottom:.5em}.h3,.text-h3,.text-h4,.text-h5{color:#666;color:var(--gray1);font-size:1.125em}.text-h4{font-weight:400}.text-h5{font-size:1em;letter-spacing:.2em;text-transform:uppercase}.text-h1,.text-h2,.text-h3,.text-h4,.text-h5{margin-top:1em}.h1--margin{margin:.25em 0 .625em}.heading-feedlink{position:absolute;right:0;top:-.0625em}@media (min-width:62.5em){.heading-feedlink{top:0}}.heading--has-feedlink{padding-right:4.5rem}.article__h2,.teaser__h2{font-size:1em;line-height:1.125;word-wrap:break-word}.article__h2 a:hover,.teaser__h2 a:hover{text-decoration:none}.article__context,.teaser__context{color:#666;color:var(--gray1);display:block;font-weight:400;letter-spacing:.1em;padding-bottom:.0625rem;text-transform:uppercase;word-spacing:.125rem}.article__title,.teaser__title{font-size:1.1875em}.article__title:hover,.teaser__title:hover{text-decoration:underline}.article__update,.ticker__update{border:1px solid;border-radius:2px;color:#e84d0e;display:inline-block;font-size:.875em;font-weight:700;letter-spacing:.1em;line-height:.93688rem;margin:0 0 -2px;padding:0 4px 0 5px;position:relative;top:-1px}.article__update:hover,.ticker__update:hover{color:#222;color:var(--color);text-decoration:none}.article__label,.teaser__label{background:#2c5b9c;color:#fff;display:block;font-size:.8125em;font-weight:400;letter-spacing:.075em;line-height:1em;min-width:4em;padding:.25em .5rem;position:relative;right:-6px;text-align:center;text-transform:uppercase;white-space:nowrap}.article__label:before,.teaser__label:before{border-style:solid;content:"";display:block;height:0;position:absolute;top:-3px;width:0}.teaser__label:before{border-color:transparent transparent transparent #000;border-width:3px 0 0 6px;right:0}.article__label{left:-6px;right:auto}.article__label:before{border-color:transparent transparent #000;border-width:0 0 3px 6px;left:0}.article__context{font-size:.875em;line-height:1rem;position:relative;top:-.0625rem}.article__title{line-height:1.3125rem}.article__ad-hide-button{background:transparent;border:0;color:#bbb;color:var(--gray2);cursor:pointer;display:inline-block;font-size:2em;height:1rem;line-height:1rem;margin:-.25rem 0 0;outline:none;padding:0;position:absolute;right:0;text-align:center;top:0;width:1rem}.article__ad-hide-button:hover{color:#666;color:var(--gray1)}.article__intro{font-size:.875rem;line-height:1.1875rem;margin:.1875rem 0 0}.article__pic{background:#b7b7b7;background:var(--image-placeholder-bgcolor);float:left;height:4.6875em;position:relative;width:4.6875em}.article__pic img{display:block;height:100%;width:100%}.article__pic--missing{background:#d5d5d5 url(/img/article-logo-fallback.svg) no-repeat 50%}.article__pic--comment,.article__pic--download{background:none}.article__pic--comment img{border-radius:100%}.article__label{bottom:7px;padding-right:.375rem;position:absolute}.article__main{margin-left:5.5em;position:relative}.article__meta{color:#666;color:var(--gray1);font-size:.875em;line-height:1.1875rem;margin:.125rem 0 -.125rem .0625rem;padding:0}.article__meta-li{display:inline-block;margin-right:1em;white-space:nowrap}.article__meta-li:last-child{margin-right:0}.article__meta-li a{color:inherit}.article__meta-li a:hover{color:#222;color:var(--color);text-decoration:none}.article__author--comment{font-style:italic}.article-comment{display:table;width:100%}.article-comment+.article-comment{border-top:1px solid #bbb;border-top:1px solid var(--gray2);margin-top:1em;padding-top:1em}.article-comment__meta{margin-bottom:.25em}@media (min-width:37.375em){.article-comment__meta{display:table-cell;width:9em}}.article-comment__main{word-break:break-word}@media (min-width:37.375em){.article-comment__main{display:table-cell}}.article-comment__username{font-weight:700;margin-right:.75em}.article-comment__date{color:#666;color:var(--gray1);font-size:.875em}@media (min-width:37.375em){.article-comment__date{display:inline-block}}.teaser-wrapper{margin:0;padding:0}@media (min-width:45em){.teaser-wrapper{display:-webkit-box;display:-webkit-flex;display:flex}.teaser-wrapper:after{clear:both;content:"";display:table}}.teaser{background:#fff;background:var(--bgcolor);display:block;-webkit-box-flex:0;-webkit-flex:0 0 auto;flex:0 0 auto;margin:0 auto .625em}.teaser:after{clear:both;content:"";display:table}@media (max-width:37.365em){.teaser{max-width:25em}}@media (min-width:45em){.teaser{float:left;margin:0 0 0 3.125%}.teaser:first-child{margin-left:0}}.teaser:last-child{margin-bottom:0}.teaser:only-child{width:100%}.teaser__pic{position:relative}.teaser__pic a{background:#b7b7b7;background:var(--image-placeholder-bgcolor);display:block;height:0;overflow:hidden;padding-bottom:56.33333%;position:relative;width:100%}.teaser__pic img{display:block;height:100%;left:0;position:absolute;top:0;width:100%}.teaser__pic--missing{background:url(/img/article-logo-fallback.svg) no-repeat 50%;background-size:6em}.teaser__main{padding:.75em .75em .625em;position:relative}@media (min-width:62.5em){.teaser__main{padding:1em 1em .625em}}@media (min-width:37.375em){.teaser__pic--xl{float:left;width:47.61905%}.teaser__pic--xl a{padding-bottom:100%}.teaser__main--xl{float:left;padding-left:3.80952%;width:52.38095%}}@media (min-width:37.375em) and (max-width:44.99em){.teaser__pic{float:left;width:47.61905%}.teaser__main{float:left;padding-left:3.1746%;width:52.38095%}}@media (min-width:45em){.teaser--m{width:31.25%}.teaser--xl{display:-webkit-box;display:-webkit-flex;display:flex;width:65.625%}}.teaser__h2{margin-bottom:.65em}.teaser__context{font-size:.875em;line-height:1.0625rem;padding-bottom:.1875rem}@media (min-width:62.5em){.teaser__title{font-size:1.25em}}@media (min-width:62.5em){.teaser__title--xl{font-size:1.625em}}@media (min-width:45em) and (max-width:62.49em){.teaser-wrapper--homepage .teaser--m .teaser__h2{margin-bottom:.25em}}@media (min-width:45em){.teaser-wrapper--homepage .teaser--m .teaser__title{font-size:1em}.teaser-wrapper--homepage .teaser--m .teaser__title--small{font-size:.9375em}}@media (min-width:62.5em){.teaser-wrapper--homepage .teaser--m .teaser__title{font-size:1.25em}.teaser-wrapper--homepage .teaser--m .teaser__title--small{font-size:1.1875em;line-height:1.375rem}}.teaser__label{float:right;font-size:.875em;line-height:1.125;margin:-23px -12px 0 0;padding:.25em 1em}@media (min-width:37.375em) and (max-width:44.99em){.teaser__label{margin-top:-.1875rem}}@media (min-width:45em){.teaser__label--xl{margin-top:-.1875rem}}@media (min-width:62.5em){.teaser__label{margin-right:-1rem}.teaser__label--m{margin-top:-1.6875rem}}.backend-sidebar{background:rgba(0,0,0,.85);color:#fff;font-size:.75em;left:-11.5em;line-height:1rem;padding:1em 0;position:absolute;top:5rem;-webkit-transition:-webkit-transform .2s ease-out;transition:-webkit-transform .2s ease-out;transition:transform .2s ease-out;transition:transform .2s ease-out,-webkit-transform .2s ease-out;width:12.5em;will-change:transform;z-index:40}@media (max-width:62.49em){.backend-sidebar{display:none}}.backend-sidebar.open,.backend-sidebar:hover{-webkit-transform:translateX(11.5em);transform:translateX(11.5em)}.backend-sidebar a{color:#fff}.backend-sidebar-nav{margin:0;padding:0 .5em;position:relative}.backend-sidebar-nav ul{padding:0}.backend-sidebar-nav li{display:block}.backend-sidebar-nav>li{margin:0 0 1em}.backend-sidebar-nav:after{border:4px solid transparent;border-left-color:#fff;content:"";height:0;pointer-events:none;position:absolute;right:0;top:18px;width:0}.backend-sidebar.open .backend-sidebar-nav:after,.backend-sidebar:hover .backend-sidebar-nav:after{border-color:transparent}.backend-buddylist{padding:0 1em 0 .5em}.backend-buddylist .tabs-panel ul{margin:0;padding:0}.backend-buddylist .tabs-panel ul li{display:block}.buddylist__li{background:url(/img/backend/user-offline.png) no-repeat;padding:0 0 0 15px}.buddylist__li--online{background:url(/img/backend/user-online.png) no-repeat;font-weight:700}.big-button{background:#e84d0e;border:0;border-radius:3px;color:#fff;cursor:pointer;display:inline-block;line-height:1;outline-color:#e84d0e;padding:.4375rem .65em}.big-button:hover{background-color:#d0450d;text-decoration:none}.big-button[disabled]{background:#bbb;background:var(--gray2)}.big-button--gray{background:#e5e5e5;background:var(--gray3);color:#ccc;color:var(--gray2a);float:left;margin-right:.4em;padding-left:.4em;padding-right:.4em}.big-button--gray:hover{background-color:#eee;background-color:var(--gray3a);color:#aaa;color:var(--gray1c)}.big-button--toggled,.big-button--toggled:hover{text-decoration:underline}.content-list{margin:0;padding:0}.content-list>li{border-bottom:1px solid #bbb;border-bottom:1px solid var(--gray2);-moz-box-sizing:content-box;box-sizing:content-box;display:block;padding:.6875em 0}.content-list>li:after{clear:both;content:"";display:table}.content-list>li:first-child{padding-top:0}.content-list:last-child>li:last-child{border-bottom:0;padding-bottom:0}.content-list:not(:last-child){margin-bottom:1em}.content-list__ad-label{background:#d5d5d5;float:left;height:75px;padding:8px;width:75px}.content-list__ad-box{margin-left:5.5em;overflow:hidden}.adsbygoogle--content-list{height:5em;width:100%}@media (min-width:62.5em){.related-list{background:#fff;background:var(--bgcolor);-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:3.75em;-moz-column-gap:3.75em;column-gap:3.75em;-webkit-column-rule:1.25em solid #ddd;-moz-column-rule:1.25em solid #ddd;column-rule:1.25em solid #ddd;-webkit-column-rule:1.25em solid var(--gray2b);-moz-column-rule:1.25em solid var(--gray2b);column-rule:1.25em solid var(--gray2b);padding:0 1.25em}.related-list>li{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;min-height:5em}.related-list>li:nth-child(3n+1){padding-top:1.25em}.related-list>li:nth-child(3n){border-bottom:0;padding-bottom:.9375em}}.related-box{background:#fff;background:var(--bgcolor);margin-bottom:.625em;padding:.5em}@media (min-width:37.375em){.related-box{margin-bottom:1.25em;padding:1em}}.related-box:last-child{margin-bottom:0}.cookie-consent{background:rgba(0,0,0,.9);bottom:0;color:#fff;font-size:.75em;left:0;padding:.625rem;position:fixed;right:0;text-align:center;z-index:120052}@media (min-width:37.375em){.cookie-consent{font-size:1em}}@media (min-width:62.5em){.cookie-consent{padding:1.25em}}.cookie-consent__text{overflow:hidden;text-align:left}.cookie-consent__button{margin:.625rem 0 0;padding:.5em 1em}@media (min-width:62.5em){.cookie-consent__button{margin:0;position:absolute;right:1.25rem;top:1rem}}.promobar{font-size:.875em;margin:.625rem 0 calc(.375rem - 1.6667%);position:relative}.promobar__text:after{content:"\a0";display:inline-block;width:1.5em}.promobar__button{background:none;border:1px solid;border-radius:3px;bottom:0;color:#999;color:var(--gray1b);cursor:pointer;line-height:1rem;margin:0;padding:1px 4px;position:absolute;right:0}.promobar__button:hover{color:#666;color:var(--gray1)}.promobar__button .icon{display:block;top:0}.shoutbox{background:#fff;background:var(--bgcolor);border:solid #bbb;border:solid var(--gray2);border-width:0 0 1px;font-size:.875em;margin-bottom:0;min-height:4.3em;padding-left:4.6em;z-index:1}@media (min-width:62.5em){.shoutbox{border-width:0 1px 1px;float:right;margin-right:1.25rem;width:18.75rem}}.shoutbox a{text-decoration:underline}.shoutbox .icon{color:#e84d0e;left:.9375rem;position:absolute;top:.8125rem}.tabs{display:table;margin:0 auto 9px;padding:0;table-layout:fixed;text-align:center;width:100%}.tabs__li{display:table-cell}.tabs__li a{border:1px solid #fff;border-left-width:0;display:block;font-size:.9em;line-height:1;padding:.3em 0;text-align:center;text-decoration:none}.tabs__li a:hover{background:hsla(0,0%,100%,.3)}.tabs__li a[aria-selected=true]{background:hsla(0,0%,100%,.7);color:#000!important}.tabs__li:first-child a{border-left-width:1px;border-radius:5px 0 0 5px}.tabs__li:last-child a{border-radius:0 5px 5px 0}.big-tabs{border-bottom:1px solid #ddd;border-bottom:1px solid var(--gray2b);display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin:0 0 1.25em;padding:0}@media (max-width:62.49em){.big-tabs{margin-left:-.625em;margin-right:-.625em;padding:0 .625em}}.big-tabs li{display:inline-block;-webkit-box-flex:1;-webkit-flex-grow:1;flex-grow:1;text-align:center}.big-tabs__a{border-bottom:3px solid transparent;display:block;font-size:.875em;padding:.75em .4em .5em}@media (min-width:37.375em){.big-tabs__a{font-size:1em;padding:.75em 1em .5em}}.big-tabs__a:hover{text-decoration:none}.big-tabs__a[aria-selected=true]{border-color:#e84d0e}.big-tabs__a--disabled{color:#bbb;color:var(--gray2);cursor:default}.ticker-group{color:#666;color:var(--gray1);font-size:.875em;font-weight:700;letter-spacing:.05em;line-height:1.125rem;margin-bottom:.5em;text-transform:uppercase}.ticker-group:first-child{margin-top:0}.ticker-group--compact{margin-bottom:.25rem}.ticker{font-size:.875em;line-height:1.1875rem;margin:0 0 1.5em;padding:0}.ticker:last-child{margin-bottom:0}.ticker li{display:block;padding:.25rem 0}.ticker-item--separator{border-top:1px solid hsla(0,0%,100%,.33);margin-top:.125rem;padding-top:.25rem!important}.ticker__date{color:#777;color:var(--gray1a);float:left}.ticker__body{padding-left:2.8125rem;word-wrap:break-word}.ticker__link--bold{font-weight:700}.ticker__article-context{color:#222;color:var(--color)}@media (max-width:37.365em){.ticker__article-context{display:block}}@media (max-width:37.365em){.ticker__article-colon{display:none}}.ticker__article-label{background:#2c5b9c;color:#fff;display:inline-block;font-size:.75rem;letter-spacing:.05em;margin-right:.25rem;padding:.0625rem .25rem 0;text-transform:uppercase}.ticker__article-link:hover{text-decoration:none}.ticker__article-link:hover .ticker__article-context,.ticker__article-link:hover .ticker__article-title{text-decoration:underline}.ticker__update{font-size:.75rem;line-height:.9375rem;text-transform:uppercase}.ticker__comment-link{color:#666;color:var(--gray1);font-size:.8125rem;line-height:1rem;margin-left:.375rem;white-space:nowrap}.ticker__comment-link:hover{color:#222;color:var(--color);text-decoration:none}@media (max-width:62.49em){.row-main--ticker-page{padding-top:0}}.ticker--compact{font-size:.8125em;line-height:1rem;margin-bottom:.625rem}.ticker--compact li{padding:.0625rem 0 .125rem}.ticker--compact .ticker__body{padding-left:2.5rem}.ticker--compact a{color:#333;color:var(--gray0)}.ticker--compact small{color:#666;color:var(--gray1)}.ticker__article-link:visited,.ticker__update:visited{color:#777;color:var(--gray1a)}.ticker--notes-box{overflow:hidden;padding-left:2.6875rem;position:relative}.ticker--notes-box:before{background:#e5e5e5;background:var(--gray3);color:#666;color:var(--gray1);content:"Notizen";font-size:1.25rem;font-weight:700;height:4.6875rem;left:0;letter-spacing:.0625rem;line-height:3.75em;margin-top:12.5rem;position:absolute;text-align:center;text-transform:uppercase;top:50%;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:0 0;transform-origin:0 0;width:25rem}.ticker-panel{position:absolute;right:0;top:0}.homepage-settings-button{background:#eee;background:var(--gray3a);border-radius:0 0 0 3px;color:#aaa;color:var(--gray1c);display:block;float:right;line-height:1em;padding:.25em;text-align:center;width:3em}@media (min-width:62.5em){.homepage-settings-button{border-radius:0 0 3px 3px;line-height:1.25em}}.homepage-settings-button:hover{background-color:#e5e5e5;background-color:var(--gray3);text-decoration:none}.homepage-settings-panel{font-size:14px;top:3.125em;width:15em;z-index:1}.homepage-settings-panel:after{border-width:12px;margin-right:.4em}.homepage-settings__row{background:#fff;background:var(--bgcolor);display:block;margin-top:4px;padding:7px}.homepage-settings__footer{margin-top:.5em;text-align:right}.toggle-box{position:relative}.toggle-box__button{display:block;line-height:36px;position:absolute;right:6px;text-align:center;top:7px;width:48px}@media (min-width:37.375em){.toggle-box__button{display:none}}.toggle-box__button[aria-expanded=true]{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.toggle-box__body{padding-top:7px}@media (max-width:37.365em){.toggle-box__body:not(.toggle--expanded){display:none}}.icon{fill:currentColor;position:relative;top:-1px;vertical-align:middle}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}.clearfix:after{clear:both;content:"";display:table}.toggle-body-container:not(.toggle--expanded) .toggle-body-item,.toggle-body:not(.toggle--expanded){display:none}.toggle-body:target{display:block}.nowrap{white-space:nowrap}.break-word{word-break:break-word}.break-all{word-break:break-all}.more-links{margin:.8em 0 0}.more-link{background:#e84d0e;color:#fff;font-size:.875em;margin-right:.2em;padding:0 .8em}.more-link:hover{background:#b83d0b;text-decoration:none}.debug-list{font-size:.875em;text-align:center}.debug-list li{display:inline-block;margin-left:1em;white-space:nowrap}.debug-list li:first-child{margin-left:0}.debug-list span{color:#888}@media (max-width:22.49em){.min-5in{display:none}}@media (max-width:37.365em){.min-7in{display:none}}@media (min-width:48em){.max-9in{display:none}}.non-critical{display:none}</style><link rel="preload" href="/css/main.397b256d.css" as="style" class="js-loadcss"><noscript><link rel="stylesheet" href="/css/main.397b256d.css"></noscript>
+	<noscript><link rel="stylesheet" href="/css/noscript.6b4ea042.css"></noscript>
+	<link rel="preload" href="/fonts/cbsans/cbsans-regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/cbsans/cbsans-bold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/js/main.7c6c83c1.js" as="script">
+	<link rel="preload" href="/js/ads.5b28cd12.js" as="script">
+	<link rel="preconnect" href="https://pics.computerbase.de">
+	<link rel="preconnect" href="https://script.ioam.de">
+	<link rel="preconnect" href="https://de.ioam.de">
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://ram.amunx.de">
+	<link rel="preconnect" href="https://acdn.adnxs.com">
+	<link rel="preconnect" href="https://ib.adnxs.com">
+	<link rel="canonical" href="https://www.computerbase.de/">
+	<link rel="alternate" href="/rss/news.xml" type="application/atom+xml" title="ComputerBase">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="mask-icon" href="/img/mask-icon.svg" color="#2c5b9c">
+	<link rel="search" type="application/opensearchdescription+xml" title="ComputerBase" href="/plugins/suche/computerbase.xml">
+	<meta name="application-name" content="ComputerBase">
+	<meta name="theme-color" content="#2c5b9c">
+	<meta name="description" content="Unabhängiges Tech-Magazin. News und Tests zu Smartphones, Tablets, PC-Hardware, Software und IT. Große technikaffine Community hilft im Forum.">
+	<meta name="referrer" content="no-referrer-when-downgrade">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="ComputerBase">
+	<meta property="og:description" content="Unabhängiges Tech-Magazin. News und Tests zu Smartphones, Tablets, PC-Hardware, Software und IT. Große technikaffine Community hilft im Forum.">
+	<meta property="og:url" content="https://www.computerbase.de/">
+	<meta property="og:image" content="https://www.computerbase.de/img/logo-opengraph.png">
+	<meta property="fb:app_id" content="117693574960551">
+	<meta property="og:site_name" content="ComputerBase">
+	<meta property="og:locale" content="de_DE">
+</head>
+<body>
+
+
+<header class="header-wrapper">
+	<div class="block1 header js-translate3d-test">
+		<a href="#content" class="skip-link">Zum Inhalt</a>
+
+		<div class="wrapper">
+			<div class="header-row">
+				<h1><a href="/" class="homepage-link"><picture><source srcset="/img/logo-orange.svg" media="(prefers-color-scheme: dark)"><img loading="eager" src="/img/logo.svg" width="147" height="64" alt="ComputerBase"></picture></a></h1>
+
+				<a href="#navigation" class="mainmenu-button js-toggle-button js-menu-button" data-toggle-method="css">Menü</a>
+
+				<div class="mainmenu-panel" id="navigation">
+					<nav class="mainmenu-nav">
+						<ul>
+							<li><a href="/ticker/" class="mainmenu__a">Ticker</a></li>
+							<li><a href="/tests/" class="mainmenu__a">Tests</a></li>
+							<li><a href="/thema/" class="mainmenu__a mainmenu__a--tags js-toggle-button js-menu-button" data-controls="tags-menu">Themen</a></li>
+							<li><a href="/downloads/" class="mainmenu__a">Downloads</a></li>
+							<li><a href="/preisvergleich/" class="mainmenu__a">Preisvergleich</a></li>
+							<li><a href="/forum/" class="mainmenu__a mainmenu__a--forum">Forum</a></li>
+						</ul>
+					</nav>
+
+					<ul class="tags-menu" id="tags-menu" hidden>
+<li><a href="/thema/app/" class="tags-menu__a">Apps</a></li>
+<li><a href="/thema/audio-video-foto/" class="tags-menu__a">Audio/Video/Foto</a></li>
+<li><a href="/thema/auto/" class="tags-menu__a">Auto</a></li>
+<li><a href="/thema/betriebssystem/" class="tags-menu__a">Betriebssystem</a></li>
+<li><a href="/thema/prozessor/" class="tags-menu__a">CPU</a></li>
+<li><a href="/thema/games/" class="tags-menu__a">Games</a></li>
+<li><a href="/thema/gehaeuse/" class="tags-menu__a">Gehäuse</a></li>
+<li><a href="/thema/grafikkarte/" class="tags-menu__a">Grafikkarte</a></li>
+<li><a href="/thema/internet/" class="tags-menu__a">Internet</a></li>
+<li><a href="/thema/mainboard/" class="tags-menu__a">Mainboard</a></li>
+<li><a href="/thema/maus/" class="tags-menu__a">Maus</a></li>
+<li><a href="/thema/computerbase/" class="tags-menu__a">Meta</a></li>
+<li><a href="/thema/monitor/" class="tags-menu__a">Monitor</a></li>
+<li><a href="/thema/netzpolitik/" class="tags-menu__a">Netzpolitik</a></li>
+<li><a href="/thema/netzteil/" class="tags-menu__a">Netzteil</a></li>
+<li><a href="/thema/notebook/" class="tags-menu__a">Notebook</a></li>
+<li><a href="/thema/pc-kuehlung/" class="tags-menu__a">PC-Kühlung</a></li>
+<li><a href="/thema/desktop-computer/" class="tags-menu__a">PC-Systeme</a></li>
+<li><a href="/thema/ram/" class="tags-menu__a">RAM</a></li>
+<li><a href="/thema/smart-home/" class="tags-menu__a">Smart Home</a></li>
+<li><a href="/thema/smartphone/" class="tags-menu__a">Smartphone</a></li>
+<li><a href="/thema/storage/" class="tags-menu__a">Storage</a></li>
+<li><a href="/thema/tablet/" class="tags-menu__a">Tablet</a></li>
+<li><a href="/thema/tastatur/" class="tags-menu__a">Tastatur</a></li>
+<li><a href="/thema/virtual-reality/" class="tags-menu__a">Virtual Reality</a></li>
+<li><a href="/thema/wearable/" class="tags-menu__a">Wearable</a></li>
+<li><a href="/thema/wirtschaft/" class="tags-menu__a">Wirtschaft</a></li>
+
+						<li><a href="/thema/" class="tags-menu__a tags-menu__a--all">Alle Themen</a></li>
+					</ul>
+				</div>
+
+				<div class="headermeta">
+					<div class="menu1">
+						
+						<a href="/forum/login/" class="menu1__button menu1__button--login">Anmelden</a>
+						<a href="/forum/register/" class="menu1__button menu1__button--register">Registrieren</a>
+						
+					</div>
+
+					<div class="menu1" role="search">
+						<a href="/suche/" class="menu1__button menu1__button--icon menu1__button--search js-toggle-button js-menu-button js-search-button" data-controls="search" aria-label="Suche" accesskey="f"><span class="menu1__label">Suche</span></a>
+						<form action="/suche/" class="menu1__panel menu1__panel--search searchmenu js-searchmenu-form" id="search" hidden>
+							<input type="text" name="q" value="" required placeholder="z. B. Grafikkarte, Smartphone, …" class="searchmenu__query js-search-query" aria-label="Suche">
+							<div class="searchmenu__row-2">
+								<select name="bereich" aria-label="Bereich" class="searchmenu__scope">
+									<option value="">alle Bereiche</option>
+									<option value="news">News</option>
+									<option value="artikel">Tests</option>
+									<option value="downloads">Downloads</option>
+									<option value="preisvergleich">Preisvergleich</option>
+									<option value="forum">Forum</option>
+								</select>
+								<button class="big-button">Suchen</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="block1 subheader">
+		<div class="wrapper">
+			<div class="header-row">
+				<div class="tagnav">
+					<ul class="tagnav__ul">
+	<li class="tagnav__li"><a href="/thema/grafikkarte/rangliste/" class="tagnav__a">Grafikkarten-Rangliste</a></li>
+<li class="tagnav__li"><a href="/thema/prozessor/rangliste/" class="tagnav__a">CPU-Vergleich</a></li>
+<li class="tagnav__li"><a href="/thema/ram/rangliste/" class="tagnav__a">RAM-Ratgeber</a></li>
+<li class="tagnav__li"><a href="/thema/ssd/rangliste/" class="tagnav__a">SSD-Ratgeber</a></li>
+<li class="tagnav__li"><a href="/thema/netzteil/rangliste/" class="tagnav__a">Netzteil-Vergleich</a></li>
+<li class="tagnav__li"><a href="/tests/smartphone/" class="tagnav__a">Smartphone-Tests</a></li>
+<li class="tagnav__li"><a href="/thema/retro/" class="tagnav__a">Retro-Ecke</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+
+
+
+
+<main class="main" id="content">
+
+
+<div class="block1 block1--ads" aria-hidden="true">
+	<div class="wrapper">
+		<div class="adbox adbox-banner" data-adpos="banner"><noscript><iframe src="/api/ads?name=noscript&amp;format=728x90" width="728" height="90"></iframe></noscript></div>
+	</div>
+</div>
+
+
+<div class="adbox adbox-skyscraper" data-adpos="skyscraper"><noscript><iframe src="/api/ads?name=noscript&amp;format=160x600" width="160" height="600"></iframe></noscript></div>
+
+
+
+
+
+
+
+
+<div class="block1 block1--highlight js-homepage-teaser-block"><div class="wrapper"><div class="row">
+<ul class="teaser-wrapper teaser-wrapper--homepage js-homepage-teaser">
+		<li class="teaser teaser--xl">
+			<div class="teaser__pic teaser__pic--xl">
+				<a href="/2020-04/dell-p2720dc-test-usb-c-daisy-chaining/" tabindex="-1" aria-hidden="true">
+					<picture>
+						<source srcset="https://pics.computerbase.de/9/1/6/6/2/article-300x300.3f96c2b2.jpg 1x, https://pics.computerbase.de/9/1/6/6/2/article-600x600.3f96c2b2.jpg 2x" media="(min-width: 598px)">
+						<img loading="eager" src="https://pics.computerbase.de/9/1/6/6/2/article-300x169.c8ede441.jpg" srcset="https://pics.computerbase.de/9/1/6/6/2/article-600x338.c8ede441.jpg 2x" width="300" height="169" alt="Dell P2720DC im Test: Sehr gute Farben treffen auf USB-C mit Daisy-Chaining">
+					</picture>
+				</a>
+			</div>
+			<div class="teaser__main teaser__main--xl">
+				<h2 class="teaser__h2"><a href="/2020-04/dell-p2720dc-test-usb-c-daisy-chaining/" class="visited-link">
+					<span class="teaser__label teaser__label--xl">Test</span>
+					<span class="teaser__context">Dell P2720DC</span>
+					<span class="teaser__title teaser__title--xl">Sehr gute Farben treffen auf USB-C mit Daisy-Chaining</span>
+				</a></h2>
+
+				<p class="article__intro">Der Dell P2720DC mit USB-C und DisplayPort-Ausgang mit Daisy-Chaining überzeugt im Test als Office-Monitor mit sehr guten Farben.</p>
+
+				<div class="article__meta">
+					<span class="article__meta-li"><a href="/forum/threads/dell-p2720dc-im-test-sehr-gute-farben-treffen-auf-usb-c-mit-daisy-chaining.1941726/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 48<span class="sr-only"> Kommentare</span></a></span>
+					<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Frank Hüber</span></span>
+					
+				</div>
+			</div>
+		</li>
+		<li class="teaser teaser--m">
+			<div class="teaser__pic">
+				
+				<a href="/2020-04/gears-tactics-benchmark-test/" tabindex="-1" aria-hidden="true">
+					<img loading="eager" src="https://pics.computerbase.de/9/2/6/5/5/article-300x169.3ed65fbf.jpg" srcset="https://pics.computerbase.de/9/2/6/5/5/article-600x338.3ed65fbf.jpg 2x" width="300" height="169" alt="Gears Tactics im Test: Rundenstrategie auf technisch hohem Niveau">
+				</a>
+			</div>
+			<div class="teaser__main">
+				<h2 class="teaser__h2"><a href="/2020-04/gears-tactics-benchmark-test/" class="visited-link">
+					<span class="teaser__label teaser__label--m">Test</span>
+					<span class="teaser__context">Gears Tactics <span class="article__update js-article-update-link" data-update-id="1" data-update-page="1">Update</span></span>
+					<span class="teaser__title teaser__title--small">Rundenstrategie auf technisch hohem Niveau</span>
+				</a></h2>
+
+				<div class="article__meta">
+					<span class="article__meta-li"><a href="/forum/threads/gears-tactics-im-test-rundenstrategie-auf-technisch-hohem-niveau.1941580/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 69<span class="sr-only"> Kommentare</span></a></span>
+					<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Wolfgang Andermahr</span></span>
+					
+				</div>
+			</div>
+		</li>
+
+</ul>
+<div class="promobar js-promobar">
+	<span class="promobar__text">
+	<strong>In eigener Sache:</strong> Sie möchten werbefrei auf ComputerBase surfen und unsere Arbeit unter&shy;stützen? Wir haben da etwas: <a href="/abo/">ComputerBase Pro</a>.
+	</span>
+	<button type="button" class="promobar__button js-promobar-button" title="Hinweis nicht mehr anzeigen" data-name="abo"><svg class="icon" viewBox="0 0 16 16" width="16" height="16"><path d="M3 4l1-1 4 4 4-4 1 1-4 4 4 4-1 1-4-4-4 4-1-1 4-4z"/></svg></button>
+</div>
+</div></div></div>
+
+
+<div class="block1 block1--default"><div class="wrapper clearfix">
+
+
+
+<div class="row-main box">
+	<div class="ticker-panel">
+		<a href="/ticker/" class="homepage-settings-button js-toggle-button js-menu-button" data-controls="homepage-settings" aria-label="Einstellungen"><svg class="icon" width="16" height="16" viewBox="0 0 32 32"><path d="M14 0h4l1 6 1.7.7L26 3.3 28.7 6l-3.4 5.3.7 1.7 6 1v4l-6 1-.7 1.7 3.4 5.3-2.7 2.7-5.3-3.4-1.7.7-1 6h-4l-1-6-1.7-.7L6 28.7 3.3 26l3.4-5.3L6 19l-6-1v-4l6-1 .7-1.7L3.3 6 6 3.3l5.3 3.4L13 6l1-6zm2 10a6 6 0 0 0 0 12 6 6 0 0 0 0-12"/></svg></a>
+		<div class="menu1__panel homepage-settings-panel" id="homepage-settings" hidden>
+			<form action="/" method="post" class="homepage-settings__form js-homepage-settings-form">
+				Startseite anpassen
+				<label class="homepage-settings__row">
+					<input type="radio" name="home-layout" value="0" checked>Standard
+				</label>
+				<label class="homepage-settings__row">
+					<input type="radio" name="home-layout" value="2" >Chronologisch
+				</label>
+				<label class="homepage-settings__row">
+					<input type="radio" name="home-layout" value="1" >Ticker
+				</label>
+				<label class="homepage-settings__row">
+					<input type="radio" name="home-layout" value="3" >Ticker ohne Aufmacher
+				</label>
+				<div class="homepage-settings__footer">
+					<button name="save">Merken</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<ul class="content-list js-homepage-list1">
+	<li class="article">
+		
+		<a href="/2020-04/apple-ios-13.5-beta-3-kontakt-tracing-api-maskenerkennung/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/4/1/article-75x75.5fad3559.jpg" srcset="https://pics.computerbase.de/9/2/7/4/1/article-150x150.5fad3559.jpg 2x" width="75" height="75" alt="iOS 13.5 Beta 3: Kontakt-Tracing-API und Maskenerkennung ziehen ein">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/apple-ios-13.5-beta-3-kontakt-tracing-api-maskenerkennung/" class="visited-link">
+				<span class="article__context">iOS 13.5 Beta 3</span>
+				<span class="article__title">Kontakt-Tracing-API und Maskenerkennung ziehen ein</span>
+			</a></h2>
+
+			<p class="article__intro">Apple hat iOS 13.5 als Betaversion freigegeben. Darin enthalten ist die Kontakt-Tracing-API, um Personenkontakte nachvollziehen zu können.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/ios-13-5-beta-3-kontakt-tracing-api-und-maskenerkennung-ziehen-ein.1941936/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 24<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Nicolas La Rocco</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/loewe-handfertigung-oled-tvs-deutschland/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/1/4/article-75x75.f79850b8.jpg" srcset="https://pics.computerbase.de/9/2/7/1/4/article-150x150.f79850b8.jpg 2x" width="75" height="75" alt="Loewe: Handfertigung für OLED-TVs in Deutschland angelaufen">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/loewe-handfertigung-oled-tvs-deutschland/" class="visited-link">
+				<span class="article__context">Loewe</span>
+				<span class="article__title">Handfertigung für OLED-TVs in Deutschland angelaufen</span>
+			</a></h2>
+
+			<p class="article__intro">Loewe startet wie geplant wieder die TV-Produktion in Deutschland. OLED-TVs werden von 30 Mitarbeitern in Handarbeit gefertigt.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/loewe-handfertigung-fuer-oled-tvs-in-deutschland-angelaufen.1941780/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 126<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Frank Hüber</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/devolo-magic-2-lan-dinrail-hutschienen-adapter-lan-sicherungskasten-powerline/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/2/6/article-75x75.9788a06b.jpg" srcset="https://pics.computerbase.de/9/2/7/2/6/article-150x150.9788a06b.jpg 2x" width="75" height="75" alt="Devolo Magic 2 LAN DINrail: Hutschienen-Adapter für LAN aus dem Sicherungskasten">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/devolo-magic-2-lan-dinrail-hutschienen-adapter-lan-sicherungskasten-powerline/" class="visited-link">
+				<span class="article__context">Devolo Magic 2 LAN DINrail</span>
+				<span class="article__title">Hutschienen-Adapter für LAN aus dem Sicherungskasten</span>
+			</a></h2>
+
+			<p class="article__intro">Der Devolo Magic 2 LAN DINrail ist ein Hutschienen-Powerline-Adapter für den Sicherungskasten, der bis zu 2.400 Mbit/s liefert.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/devolo-magic-2-lan-dinrail-hutschienen-adapter-fuer-lan-aus-dem-sicherungskasten.1941888/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 50<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Frank Hüber</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/seagate-ironwolf-ssd-hdd-nas-lesertest-anzeige/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img decoding="async" src="https://pics.computerbase.de/9/2/0/0/4/article-75x75.c53df7bb.jpg" srcset="https://pics.computerbase.de/9/2/0/0/4/article-150x150.c53df7bb.jpg 2x" width="75" height="75" alt="Seagate IronWolf &amp; Synology DS918+: 64 + 2 TB für NAS-Enthusiasten zum Testen [Gesponsert]">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/seagate-ironwolf-ssd-hdd-nas-lesertest-anzeige/" class="visited-link">
+				<span class="article__context">Seagate IronWolf &amp; Synology DS918+</span>
+				<span class="article__title">64 + 2 TB für NAS-Enthusiasten zum Testen [Gesponsert]</span>
+			</a></h2>
+
+			<p class="article__intro">SSDs machen NAS noch schneller. Seagate stellt 64 + 2 TB Speicherplatz der IronWolf-Serie und Synology die DS918+ für Lesertests bereit.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/seagate-ironwolf-synology-ds918-64-2-tb-fuer-nas-enthusiasten-zum-testen-gesponsert.1941972/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 1<span class="min-7in"> Kommentar</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Seagate </span></span>
+				
+			</div>
+
+			
+			<button type="button" class="article__ad-hide-button js-article-ad-hide-button" title="Anzeige ausblenden" data-id="71356">×</button>
+		</div>
+	</li>
+<li>
+<ul class="ticker ticker--notes-box">
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/fairphone-3-e-lineageos/" class="ticker__article-link"><span class="ticker__article-context">/e/OS<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Fairphone 3 erhält LineageOS ohne Google Mobile-Dienste</span></a>&nbsp;<a href="/forum/threads/e-os-fairphone-3-erhaelt-lineageos-ohne-google-mobile-dienste.1941940/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 14</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/epic-gratis-spiele-zwei-faktor-authentisierung/" class="ticker__article-link"><span class="ticker__article-context">Epic Games Store<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Inanspruchnahme von Gratisspielen nur mit 2FA</span></a>&nbsp;<a href="/forum/threads/epic-games-store-inanspruchnahme-von-gratisspielen-nur-mit-2fa.1941828/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 78</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/amd-ryzen-ram-oc-community-million-aufrufe/" class="ticker__article-link"><span class="ticker__article-context">Aus der Community<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Ryzen RAM OC Community erreicht 1 Million Aufrufe</span></a>&nbsp;<a href="/forum/threads/aus-der-community-ryzen-ram-oc-community-erreicht-1-million-aufrufe.1941719/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 32</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/western-digital-enterprise-hdd-teurer/" class="ticker__article-link"><span class="ticker__article-context">Western Digital<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Enterprise-HDDs sollen teurer werden</span></a>&nbsp;<a href="/forum/threads/western-digital-enterprise-hdds-sollen-teurer-werden.1941559/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 58</a></div>
+</li>
+</ul>
+</li>	<li class="article">
+		
+		<a href="/2020-04/android-nokia-ratingen-3-jahre-updates/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/1/1/article-75x75.7e798c3c.jpg" srcset="https://pics.computerbase.de/9/2/7/1/1/article-150x150.7e798c3c.jpg 2x" width="75" height="75" alt="Android: Nokias dreijährige Update-Garantie kommt aus Ratingen">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/android-nokia-ratingen-3-jahre-updates/" class="visited-link">
+				<span class="article__context">Android</span>
+				<span class="article__title">Nokias dreijährige Update-Garantie kommt aus Ratingen</span>
+			</a></h2>
+
+			<p class="article__intro">Nokia-Smartphones kommen vermehrt bei Unternehmen zum Einsatz. An seiner langen Update-Garantie will HMD Global auch in Zukunft festhalten.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/android-nokias-dreijaehrige-update-garantie-kommt-aus-ratingen.1941783/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 66<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Nicolas La Rocco</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/amd-radeon-rdna2-gpu-rumor/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/1/0/article-75x75.09e1e577.jpg" srcset="https://pics.computerbase.de/9/2/7/1/0/article-150x150.09e1e577.jpg 2x" width="75" height="75" alt="Gerüchteküche: AMDs RDNA-2-Serie besteht angeblich aus drei GPUs">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/amd-radeon-rdna2-gpu-rumor/" class="visited-link">
+				<span class="article__context">Gerüchteküche</span>
+				<span class="article__title">AMDs RDNA-2-Serie besteht angeblich aus drei GPUs</span>
+			</a></h2>
+
+			<p class="article__intro">Die Gerüchteküche hat wieder gebrodelt: AMDs RDNA-2-Generation soll aus drei GPUs bestehen, was deutlich mehr als aktuell wären.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/geruechtekueche-amds-rdna-2-serie-besteht-angeblich-aus-drei-gpus.1941752/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 203<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Wolfgang Andermahr</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/devolo-magic-2-wifi-wlan-powerline-adapter/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/1/3/article-75x75.911fccfa.jpg" srcset="https://pics.computerbase.de/9/2/7/1/3/article-150x150.911fccfa.jpg 2x" width="75" height="75" alt="Magic 2 WiFi next: Devolo verbessert das WLAN der Powerline-Adapter">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/devolo-magic-2-wifi-wlan-powerline-adapter/" class="visited-link">
+				<span class="article__context">Magic 2 WiFi next</span>
+				<span class="article__title">Devolo verbessert das WLAN der Powerline-Adapter</span>
+			</a></h2>
+
+			<p class="article__intro">Mit Magic 2 WiFi next verbessert Devolo das Mesh-WLAN der Powerline-Adapter und bietet jetzt MU-MIMO und Access Point Steering.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/magic-2-wifi-next-devolo-verbessert-das-wlan-der-powerline-adapter.1941834/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 13<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Frank Hüber</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/deutsche-telekom-ftth-anzahl-anschluesse/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="eager" decoding="async" src="https://pics.computerbase.de/9/2/7/2/4/article-75x75.a881907f.jpg" srcset="https://pics.computerbase.de/9/2/7/2/4/article-150x150.a881907f.jpg 2x" width="75" height="75" alt="Deutsche Telekom: 1,7 Millionen Haushalte mit FTTH-Anschluss">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/deutsche-telekom-ftth-anzahl-anschluesse/" class="visited-link">
+				<span class="article__context">Deutsche Telekom</span>
+				<span class="article__title">1,7 Millionen Haushalte mit FTTH-Anschluss</span>
+			</a></h2>
+
+			<p class="article__intro">Die Deutsche Telekom vermeldet Fortschritte beim Vectoring-Ausbau und nennt erstmals konkrete Zahlen für direkte Glasfaseranschlüsse.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/deutsche-telekom-1-7-millionen-haushalte-mit-ftth-anschluss.1941865/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 64<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Andreas Frischholz</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class="row-aside">
+
+<div class="row-aside-group">
+
+
+	<div class="box box--sidebar box--blue toggle-box">
+		<h2 class="h2 h2--margin-0 h2--forum-box"><a href="/forum/">Aus dem Forum</a></h2>
+		<a href="#forum" class="toggle-box__button js-toggle-button" data-toggle-method="css" data-toggle-cookie="homepage-toggle-forum" aria-label="Toggle"><svg class="icon" width="28" height="28" viewBox="0 0 28 28"><path d="M28 9l-2.63-2.63L14 17.76 2.62 6.37 0 9l14 14L28 9z"/></svg></a>
+		<div class="toggle-box__body" id="forum">
+		<div class="js-tabs" data-cookie-name="tabs-forum-box" data-cookie-path2="/">	<ul class="tabs" role="tablist">
+		<li class="tabs__li" role="presentation"><a href="#forum-neue-themen" class="tabs__a" id="tab-forum-neue-themen" role="tab" aria-controls="forum-neue-themen" aria-selected="true">Neue Themen</a></li>
+		<li class="tabs__li" role="presentation"><a href="#forum-ohne-antwort" class="tabs__a" id="tab-forum-ohne-antwort" role="tab" aria-controls="forum-ohne-antwort" aria-selected="false">Ohne Antwort</a></li>
+	</ul>
+<div class="tabs-panel" id="forum-neue-themen" role="tabpanel" aria-labelledby="tab-forum-neue-themen">
+<ul class="ticker ticker--compact">
+	<li><time class="ticker__date" datetime="2020-04-30T05:51:08+02:00">05:51</time> <div class="ticker__body"><a href="/forum/threads/vba-aus-userform-zu-excel-und-zurueck.1941971/" title="Forum „Programmieren“" class="js-thread-link">VBA: Aus Userform zu Excel und zurück?</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T05:38:50+02:00">05:38</time> <div class="ticker__body"><a href="/forum/threads/groove-musik-windows-audioplayer-begrenzung-der-datei-track-menge.1941970/" title="Forum „Heimkino und HiFi“" class="js-thread-link">Groove-Musik (Windows-Audioplayer) - Begrenzung der Datei-/Track-Menge?</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T03:57:12+02:00">03:57</time> <div class="ticker__body"><a href="/forum/threads/niedrige-timings-pushen-gut-so-2400-cl16-auf-cl12.1941969/" title="Forum „Arbeitsspeicher“" class="js-thread-link">Niedrige Timings pushen, gut so? 2400 CL16 auf CL12</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T02:42:54+02:00">02:42</time> <div class="ticker__body"><a href="/forum/threads/obs-4k-sieht-bei-aufnahme-schlechter-aus-wie-fullhd.1941968/" title="Forum „Monitore und Displays“" class="js-thread-link">OBS 4k sieht bei Aufnahme schlechter aus wie FullHD</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T02:39:26+02:00">02:39</time> <div class="ticker__body"><a href="/forum/threads/festplatte-wird-von-kamera-nicht-mehr-erkannt-nachdem-memtest-sie-faelschlicherweise-formatiert-hat.1941967/" title="Forum „Windows 10“" class="js-thread-link">Festplatte wird von Kamera nicht mehr erkannt nachdem MemTest sie fälschlicherweise formatiert hat</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T01:31:48+02:00">01:31</time> <div class="ticker__body"><a href="/forum/threads/internetprobleme-beim-zocken-delays-packets.1941966/" title="Forum „Heimnetzwerke und Internethardware“" class="js-thread-link">Internetprobleme beim zocken (Delays, Packets)</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T00:52:31+02:00">00:52</time> <div class="ticker__body"><a href="/forum/threads/windows-per-usb-installieren.1941964/" title="Forum „Windows 10“" class="js-thread-link">Windows per Usb installieren</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T00:48:00+02:00">00:48</time> <div class="ticker__body"><a href="/forum/threads/wlan-karte-oder-stick.1941963/" title="Forum „Heimnetzwerke und Internethardware“" class="js-thread-link">WLan Karte oder Stick</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T00:29:41+02:00">00:29</time> <div class="ticker__body"><a href="/forum/threads/lenovo-laptop-nach-win10-update-in-dauerboot-schleife.1941962/" title="Forum „Windows 10“" class="js-thread-link">Lenovo Laptop nach Win10 Update in Dauerboot-Schleife</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T00:28:04+02:00">00:28</time> <div class="ticker__body"><a href="/forum/threads/kurze-haenger-stotter-beim-scrollen-spielen-und-tippen-im-akkubetrieb.1941961/" title="Forum „Notebooks: Diskussionen“" class="js-thread-link">Kurze &apos;&apos;Hänger/Stotter&apos;&apos; beim Scrollen, Spielen und Tippen im Akkubetrieb</a></div></li>
+</ul>
+</div>
+<div class="tabs-panel" id="forum-ohne-antwort" role="tabpanel" aria-labelledby="tab-forum-ohne-antwort" hidden>
+<ul class="ticker ticker--compact">
+	<li><time class="ticker__date" datetime="2020-04-29T23:58:14+02:00">29.04.</time> <div class="ticker__body"><a href="/forum/threads/internes-laptop-mikrofon-uebertraegt-keine-stimme.1941952/" title="Forum „Sound und Multimedia“" class="js-thread-link">Internes Laptop Mikrofon überträgt keine Stimme</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-29T22:40:45+02:00">29.04.</time> <div class="ticker__body"><a href="/forum/threads/playstation-4-controller-drueckt-r2-und-l2-von-alleine-aber-nur-am-pc.1941932/" title="Forum „Eingabe- und Ausgabegeräte“" class="js-thread-link">Playstation 4 Controller drückt R2 und L2 von alleine. Aber nur am PC!</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-28T20:18:08+02:00">28.04.</time> <div class="ticker__body"><a href="/forum/threads/maus-makro-tasten-funktionieren-nicht-beim-sneaken-in-minecraft.1941639/" title="Forum „Eingabe- und Ausgabegeräte“" class="js-thread-link">Maus-Makro-Tasten funktionieren nicht beim Sneaken in Minecraft</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-28T16:36:11+02:00">28.04.</time> <div class="ticker__body"><a href="/forum/threads/musikwiedergabe-teils-verzerrt-bei-mi-9t-pro.1941566/" title="Forum „Fragen zu Android-Smartphones und -Tablets“" class="js-thread-link">Musikwiedergabe teils verzerrt bei Mi 9T Pro</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-28T05:50:00+02:00">28.04.</time> <div class="ticker__body"><a href="/forum/threads/google-chrome-seite-an-handy-senden-ohne-benachrichtigung.1941451/" title="Forum „Online“" class="js-thread-link">Google Chrome: Seite an Handy senden ohne Benachrichtigung?</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-26T14:35:47+02:00">26.04.</time> <div class="ticker__body"><a href="/forum/threads/logitech-k380-verbindungsprobleme.1941080/" title="Forum „Eingabe- und Ausgabegeräte“" class="js-thread-link">Logitech k380 Verbindungsprobleme</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-24T06:25:09+02:00">24.04.</time> <div class="ticker__body"><a href="/forum/threads/ps4-mitteilungshinweise-im-schnellmenue-loeschen.1940496/" title="Forum „PlayStation“" class="js-thread-link">PS4 Mitteilungshinweise im Schnellmenü löschen</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-22T15:50:03+02:00">22.04.</time> <div class="ticker__body"><a href="/forum/threads/fire-tv-cube-verbunde-geraete-umbenennen-moeglich.1940089/" title="Forum „Internet der Dinge und Automotive“" class="js-thread-link">Fire TV Cube - Verbunde Geräte umbenennen möglich?</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-22T09:27:04+02:00">22.04.</time> <div class="ticker__body"><a href="/forum/threads/eigene-abfrage-in-power-bi-als-spalte-eintragen-moeglich.1939961/" title="Forum „Windows Server und professionelle Netzwerke“" class="js-thread-link">Eigene Abfrage in Power Bi als spalte eintragen möglich?</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-22T03:15:08+02:00">22.04.</time> <div class="ticker__body"><a href="/forum/threads/optimale-einstellung-videobearbeitung-premiere-pro.1939939/" title="Forum „Overclocking und Undervolting von Intel-Systemen“" class="js-thread-link">Optimale Einstellung Videobearbeitung (Premiere Pro)</a></div></li>
+</ul>
+</div>
+</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-aside-group js-app-install-wrapper row-aside-group--homepage-rectangle">
+	<div class="box"><div class="adbox adbox-rectangle" data-adpos="rectangle:sidebar-1"><noscript><iframe src="/api/ads?name=noscript&amp;format=300x250" width="300" height="250"></iframe></noscript></div></div>
+</div>
+
+</div>
+</div></div>
+
+
+<div class="block1 block1--breakout non-critical"><div class="wrapper"><div class="row carousel">
+	<h2 class="carousel__heading"><a href="/tests/" class="carousel__heading-link" title="Top-10 der letzten 31 Tage">Top-10 Tests &amp; Berichte</a></h2>
+	<div class="slides-wrapper js-carousel-slides">
+<ul class="slides slides--10">
+		<li class="slide">
+			<a href="/2020-03/amd-ryzen-9-4900hs-renoir-test/" class="visited-link">
+				<div class="slide__rank slide__rank--1">1</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/0/7/7/article-180x101.231b0470.jpg" srcset="https://pics.computerbase.de/9/2/0/7/7/article-360x202.231b0470.jpg 2x" width="180" height="101" alt="AMD Ryzen 9 4900HS im Test: Renoir im Asus Zephyrus G14 ist ein Riesenschritt" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">AMD Ryzen 9 4900HS</span>
+					<span class="slide__title">Renoir im Asus Zephyrus G14 ist ein Riesenschritt</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/oneplus-8-pro-test/" class="visited-link">
+				<div class="slide__rank slide__rank--2">2</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/3/0/2/article-180x101.3f266855.jpg" srcset="https://pics.computerbase.de/9/2/3/0/2/article-360x202.3f266855.jpg 2x" width="180" height="101" alt="OnePlus 8 Pro im Test: Dieses Smartphone dreht voll auf – auch beim Preis" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">OnePlus 8 Pro</span>
+					<span class="slide__title">Dieses Smartphone dreht voll auf – auch beim Preis</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/zotac-zbox-ca621-amd-ryzen-test/" class="visited-link">
+				<div class="slide__rank slide__rank--3">3</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/1/8/5/3/article-180x101.df7a37e8.jpg" srcset="https://pics.computerbase.de/9/1/8/5/3/article-360x202.df7a37e8.jpg 2x" width="180" height="101" alt="Zotac Zbox CA621 nano im Test: Mini-PC mit passiv gekühltem Ryzen 3000 für 299 Euro" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Zotac Zbox CA621 nano</span>
+					<span class="slide__title">Mini-PC mit passiv gekühltem Ryzen 3000 für 299 Euro</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/80plus-gold-netzteile-test-2020/" class="visited-link">
+				<div class="slide__rank slide__rank--4">4</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/1/6/0/5/article-180x101.ce220c6c.jpg" srcset="https://pics.computerbase.de/9/1/6/0/5/article-360x202.ce220c6c.jpg 2x" width="180" height="101" alt="80Plus-Gold-Netzteile im Test: Effiziente Netzteile bis 100 Euro im Vergleich" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">80Plus-Gold-Netzteile</span>
+					<span class="slide__title">Effiziente Netzteile bis 100 Euro im Vergleich</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/huawei-p40-pro-test/" class="visited-link">
+				<div class="slide__rank slide__rank--5">5</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/2/2/3/article-180x101.319d6f7a.jpg" srcset="https://pics.computerbase.de/9/2/2/2/3/article-360x202.319d6f7a.jpg 2x" width="180" height="101" alt="Huawei P40 Pro im Test: Eine tolle Smartphone-Kamera ist nicht alles" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Huawei P40 Pro</span>
+					<span class="slide__title">Eine tolle Smartphone-Kamera ist nicht alles</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/raytracing-in-spielen-gpu-beschleunigung/" class="visited-link">
+				<div class="slide__rank slide__rank--6">6</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/1/9/5/5/article-180x101.108428a1.jpg" srcset="https://pics.computerbase.de/9/1/9/5/5/article-360x202.108428a1.jpg 2x" width="180" height="101" alt="Raytracing in Spielen VI: So werden Strahlen von GPUs beschleunigt" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">Raytracing in Spielen VI</span>
+					<span class="slide__title">So werden Strahlen von GPUs beschleunigt</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/sony-wf-1000xm3-test/" class="visited-link">
+				<div class="slide__rank slide__rank--7">7</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/3/2/0/article-180x101.47435d06.jpg" srcset="https://pics.computerbase.de/9/2/3/2/0/article-360x202.47435d06.jpg 2x" width="180" height="101" alt="Sony WF-1000XM3 im Test: Ausgezeichnete kabellose In-Ears mit 3D-Audio" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Sony WF-1000XM3</span>
+					<span class="slide__title">Ausgezeichnete kabellose In-Ears mit 3D-Audio</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/intel-core-i7-10875h-test/" class="visited-link">
+				<div class="slide__rank slide__rank--8">8</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/4/2/2/article-180x101.2299116d.jpg" srcset="https://pics.computerbase.de/9/2/4/2/2/article-360x202.2299116d.jpg 2x" width="180" height="101" alt="Intel Core i7-10875H im Test: Schneller, aber in Multi-Threading-Apps hinter AMD" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Intel Core i7-10875H</span>
+					<span class="slide__title">Schneller, aber in Multi-Threading-Apps hinter AMD</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/lg-38gl950g-nano-ips-test/" class="visited-link">
+				<div class="slide__rank slide__rank--9">9</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/4/6/9/article-180x101.93cb7db4.jpg" srcset="https://pics.computerbase.de/9/2/4/6/9/article-360x202.93cb7db4.jpg 2x" width="180" height="101" alt="LG 38GL950G im Test: Gaming in 24:10 mit 175 Hz bei G-Sync und FreeSync" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">LG 38GL950G</span>
+					<span class="slide__title">Gaming in 24:10 mit 175 Hz bei G-Sync und FreeSync</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/resident-evil-3-benchmark-test/" class="visited-link">
+				<div class="slide__rank slide__rank--10">10</div>
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/2/1/1/article-180x101.429242cf.jpg" srcset="https://pics.computerbase.de/9/2/2/1/1/article-360x202.429242cf.jpg 2x" width="180" height="101" alt="Resident Evil 3 im Test: Ein gutes Remake mit mehr Action statt Horror" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Resident Evil 3</span>
+					<span class="slide__title">Ein gutes Remake mit mehr Action statt Horror</span>
+				</span>
+			</a>
+		</li>
+
+</ul>
+</div>
+
+<div class="carousel-nav js-carousel-nav">
+	<a href="/tests/" class="js-carousel-prev carousel-nav__prev carousel-nav--disabled" aria-label="&lt;"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><path d="M10 16l3-3-5-5 5-5-3-3-8 8z"/></svg></a>
+	<a href="/tests/" class="js-carousel-next carousel-nav__next" aria-label="&gt;"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><path d="M6 0L3 3l5 5-5 5 3 3 8-8z"/></svg></a>
+</div>
+
+</div></div></div>
+
+
+<div class="block1 block1--default non-critical"><div class="wrapper clearfix">
+<div class="row-main box">
+	<ul class="content-list js-homepage-list2">
+	<li class="article">
+		
+		<a href="/2020-04/star-wars-battlefront-2-letztes-update/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/7/0/8/article-75x75.4e1d2299.jpg" srcset="https://pics.computerbase.de/9/2/7/0/8/article-150x150.4e1d2299.jpg 2x" width="75" height="75" alt="Star Wars Battlefront 2: Shooter geht mit letztem Update in den Standby-Modus">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/star-wars-battlefront-2-letztes-update/" class="visited-link">
+				<span class="article__context">Star Wars Battlefront 2</span>
+				<span class="article__title">Shooter geht mit letztem Update in den Standby-Modus</span>
+			</a></h2>
+
+			<p class="article__intro">Star Wars Battlefront 2 erhält heute sein letztes Update „Schlacht um Scarif“. Dice kann nun alle Ressourcen auf neue Spiele konzentrieren.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/star-wars-battlefront-2-shooter-geht-mit-letztem-update-in-den-standby-modus.1941843/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 23<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Max Doll</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/quartalsbericht-amd-ryzen-navi/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/6/7/9/article-75x75.0f190b2f.jpg" srcset="https://pics.computerbase.de/9/2/6/7/9/article-150x150.0f190b2f.jpg 2x" width="75" height="75" alt="Quartalsbericht: AMD landet dank Ryzen und Navi auf dem Punkt">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/quartalsbericht-amd-ryzen-navi/" class="visited-link">
+				<span class="article__context">Quartalsbericht</span>
+				<span class="article__title">AMD landet dank Ryzen und Navi auf dem Punkt</span>
+			</a></h2>
+
+			<p class="article__intro">Erneut war es bei AMD die Ryzen-CPU-Familie, die für den Umsatz  im Unternehmen sorgt. Sehr schwach präsentiert sich der Profi-Bereich.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/quartalsbericht-amd-landet-dank-ryzen-und-navi-auf-dem-punkt.1941701/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 154<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Volker Rißka</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/toshiba-hdd-smr-ohne-kennzeichnung/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/4/9/4/article-75x75.fb86ba26.jpg" srcset="https://pics.computerbase.de/9/2/4/9/4/article-150x150.fb86ba26.jpg 2x" width="75" height="75" alt="Ohne Ausnahme: Mit Toshiba verschweigen alle HDD-Hersteller SMR-Technik">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/toshiba-hdd-smr-ohne-kennzeichnung/" class="visited-link">
+				<span class="article__context">Ohne Ausnahme <span class="article__update js-article-update-link" data-update-id="1" data-update-page="1">Update</span></span>
+				<span class="article__title">Mit Toshiba verschweigen alle HDD-Hersteller SMR-Technik</span>
+			</a></h2>
+
+			<p class="article__intro">Mit Toshiba lässt auch der dritte HDD-Hersteller eine Kennzeichnung für den Einsatz der SMR-Technik bei bestimmten Festplatten missen.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/ohne-ausnahme-mit-toshiba-verschweigen-alle-hdd-hersteller-smr-technik.1938586/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 283<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Michael Günsch</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+<li>
+<ul class="ticker ticker--notes-box">
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/lizenzabkommen-cxmt-rambus/" class="ticker__article-link"><span class="ticker__article-context">Lizenzabkommen<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Chinesischer DRAM-Hersteller CXMT setzt auf Rambus</span></a>&nbsp;<a href="/forum/threads/lizenzabkommen-chinesischer-dram-hersteller-cxmt-setzt-auf-rambus.1941455/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 32</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/last-of-us-part-2-release/" class="ticker__article-link"><span class="ticker__article-context">The Last of Us Part 2<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Terminankündigung von großen Leaks begleitet</span></a>&nbsp;<a href="/forum/threads/the-last-of-us-part-2-terminankuendigung-von-grossen-leaks-begleitet.1941399/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 135</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/total-war-shogun-2-gratis/" class="ticker__article-link"><span class="ticker__article-context">Gratisspiel<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Total War: Shogun 2 kostenlos auf Steam</span></a>&nbsp;<a href="/forum/threads/gratisspiel-total-war-shogun-2-kostenlos-auf-steam.1941371/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 84</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/geforce-445.98-grd-hotfix-treiber-maxwell-notebooks/" class="ticker__article-link"><span class="ticker__article-context">GeForce 445.98 GRD Hotfix<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Grafiktreiber behebt Probleme mit Maxwell-Notebooks</span></a>&nbsp;<a href="/forum/threads/geforce-445-98-grd-hotfix-grafiktreiber-behebt-probleme-mit-maxwell-notebooks.1940997/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 5</a></div>
+</li>
+</ul>
+</li>	<li class="article">
+		
+		<a href="/2020-04/samsung-galaxy-m31-deutschland/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/7/1/2/article-75x75.31513c32.jpg" srcset="https://pics.computerbase.de/9/2/7/1/2/article-150x150.31513c32.jpg 2x" width="75" height="75" alt="Samsung Galaxy M31: Potenzieller Dauerläufer mit 6.000 mAh kostet 269 Euro">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/samsung-galaxy-m31-deutschland/" class="visited-link">
+				<span class="article__context">Samsung Galaxy M31</span>
+				<span class="article__title">Potenzieller Dauerläufer mit 6.000 mAh kostet 269 Euro</span>
+			</a></h2>
+
+			<p class="article__intro">Samsung stellt mit dem Galaxy M31 einen potenziellen Dauerläufer vor, der mit seinen 6.000 mAh Serien und Spiele ausdauernd streamen soll.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/samsung-galaxy-m31-potenzieller-dauerlaeufer-mit-6-000-mah-kostet-269-euro.1941804/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 43<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Sven Bauduin</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/wd-red-festplatten-smr-ohne-kennzeichnung/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/4/4/8/article-75x75.44ef1f52.jpg" srcset="https://pics.computerbase.de/9/2/4/4/8/article-150x150.44ef1f52.jpg 2x" width="75" height="75" alt="WD Red: Manche Festplatten nutzen SMR ohne Kennzeichnung">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/wd-red-festplatten-smr-ohne-kennzeichnung/" class="visited-link">
+				<span class="article__context">WD Red <span class="article__update js-article-update-link" data-update-id="5" data-update-page="1">Update 5</span></span>
+				<span class="article__title">Manche Festplatten nutzen SMR ohne Kennzeichnung</span>
+			</a></h2>
+
+			<p class="article__intro">Einige Festplatten der für NAS bestimmten Serie WD Red nutzen die Aufzeichnungstechnik SMR, ohne dass Western Digital dies angibt.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/wd-red-manche-festplatten-nutzen-smr-ohne-kennzeichnung.1938050/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 501<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Michael Günsch</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/vatm-breitbandstudie-halb-deutschland-gigabit/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/7/0/9/article-75x75.7a04f1d0.jpg" srcset="https://pics.computerbase.de/9/2/7/0/9/article-150x150.7a04f1d0.jpg 2x" width="75" height="75" alt="VATM-Breitbandstudie: Halb Deutschland kann bald Gigabit-Anschlüsse buchen">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/vatm-breitbandstudie-halb-deutschland-gigabit/" class="visited-link">
+				<span class="article__context">VATM-Breitbandstudie</span>
+				<span class="article__title">Halb Deutschland kann bald Gigabit-Anschlüsse buchen</span>
+			</a></h2>
+
+			<p class="article__intro">Die VATM-Breitbandstudie besagt: Mitte 2020 soll die Hälfte der Haushalte in Deutschland einen Anschluss mit Gigabit-Geschwindigkeit buchen.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/vatm-breitbandstudie-halb-deutschland-kann-bald-gigabit-anschluesse-buchen.1941798/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 73<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Andreas Frischholz</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/lg-gram-14-15-17-notebooks-deutschland/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/7/0/3/article-75x75.304264c8.jpg" srcset="https://pics.computerbase.de/9/2/7/0/3/article-150x150.304264c8.jpg 2x" width="75" height="75" alt="LG Gram 14/15/17: Leichte Notebooks kommen ab 1.149 Euro nach Deutschland">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/lg-gram-14-15-17-notebooks-deutschland/" class="visited-link">
+				<span class="article__context">LG Gram 14/15/17</span>
+				<span class="article__title">Leichte Notebooks kommen ab 1.149 Euro nach Deutschland</span>
+			</a></h2>
+
+			<p class="article__intro">LG steigt mit seinen bislang vor allem in Nordamerika und Asien erhältlichen Gram-Notebooks ab 1.149 Euro in den deutschen Markt ein.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/lg-gram-14-15-17-leichte-notebooks-kommen-ab-1-149-euro-nach-deutschland.1941736/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 40<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Nicolas La Rocco</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class="row-aside">
+	<div class="row-aside-group">
+		<div class="box box--sidebar toggle-box">
+			<h2 class="h2 h2--margin-0"><a href="/downloads/">Neue Downloads</a></h2>
+			<a href="#downloads" class="toggle-box__button js-toggle-button" data-toggle-method="css" data-toggle-cookie="homepage-toggle-downloads" aria-label="Toggle"><svg class="icon" width="28" height="28" viewBox="0 0 28 28"><path d="M28 9l-2.63-2.63L14 17.76 2.62 6.37 0 9l14 14L28 9z"/></svg></a>
+			<div class="toggle-box__body" id="downloads">
+			<div class="ticker-group ticker-group--compact">Mittwoch, 29. April 2020</div>
+<ul class="ticker ticker--compact">
+<li>
+	<time class="ticker__date">22:58</time>
+	<div class="ticker__body"><a href="/downloads/foto-und-grafik/imageglass/" class="visited-link"><b>ImageGlass 7.6.4.30</b></a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">22:12</time>
+	<div class="ticker__body"><a href="/downloads/systemtools/powertoys/" class="visited-link">PowerToys 0.17.0</a> <small>Win 10</small></div>
+</li>
+<li>
+	<time class="ticker__date">22:10</time>
+	<div class="ticker__body"><a href="/downloads/internet/cfosspeed/" class="visited-link">cFosSpeed 11.01 Build 2433 Beta</a> <span class="german-flag">Deutsch</span> <small>(Shareware)</small></div>
+</li>
+<li>
+	<time class="ticker__date">20:48</time>
+	<div class="ticker__body"><a href="/downloads/internet/browser/microsoft-edge/" class="visited-link">Microsoft Edge 81.0.416.68</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">20:36</time>
+	<div class="ticker__body"><a href="/downloads/betriebssysteme/linux-kernel/" class="visited-link">Linux Kernel 5.6.8</a> <small>Linux</small></div>
+</li>
+<li>
+	<time class="ticker__date">20:35</time>
+	<div class="ticker__body"><a href="/downloads/betriebssysteme/linux-kernel/" class="visited-link">Linux Kernel 5.4.36</a> <small>Linux</small></div>
+</li>
+<li>
+	<time class="ticker__date">20:34</time>
+	<div class="ticker__body"><a href="/downloads/betriebssysteme/linux-kernel/" class="visited-link">Linux Kernel 4.19.119</a> <small>Linux</small></div>
+</li>
+<li>
+	<time class="ticker__date">20:27</time>
+	<div class="ticker__body"><a href="/downloads/internet/browser/google-chrome/" class="visited-link">Google Chrome 83.0.4103.34 Beta</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">20:25</time>
+	<div class="ticker__body"><a href="/downloads/audio-und-video/camtasia-studio/" class="visited-link">Camtasia 2020 v20.0.1</a> <span class="german-flag">Deutsch</span> <small>(Shareware)</small></div>
+</li>
+<li>
+	<time class="ticker__date">20:15</time>
+	<div class="ticker__body"><a href="/downloads/internet/dateitransfer/bittorrent/" class="visited-link">BitTorrent 7.10.5 build 45651</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">16:02</time>
+	<div class="ticker__body"><a href="/downloads/systemtools/bluestacks/" class="visited-link">BlueStacks 4.200.0.1072</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">15:55</time>
+	<div class="ticker__body"><a href="/downloads/internet/browser/opera/" class="visited-link">Opera 68.0.3618.63</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">15:49</time>
+	<div class="ticker__body"><a href="/downloads/systemtools/ccleaner/" class="visited-link">CCleaner 5.66.7705</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">14:19</time>
+	<div class="ticker__body"><a href="/downloads/sicherheit/antimalware/spybot-detection-updates/" class="visited-link">Spybot Detection Updates 2020-04-29</a></div>
+</li>
+<li>
+	<time class="ticker__date">12:13</time>
+	<div class="ticker__body"><a href="/downloads/games/gog-galaxy/" class="visited-link">GOG Galaxy 2.0.14.257 Beta</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">11:55</time>
+	<div class="ticker__body"><a href="/downloads/internet/browser/vivaldi/" class="visited-link">Vivaldi 3.0 Update 2</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">08:12</time>
+	<div class="ticker__body"><a href="/downloads/games/steam/" class="visited-link">Steam 2020-04-28</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">08:10</time>
+	<div class="ticker__body"><a href="/downloads/systemtools/intel-driver-update-utility/" class="visited-link">Intel Driver Update Utility 20.4.17.5</a> <span class="german-flag">Deutsch</span></div>
+</li>
+<li>
+	<time class="ticker__date">08:09</time>
+	<div class="ticker__body"><a href="/downloads/sicherheit/antimalware/spybot-search-und-destroy/" class="visited-link">Spybot - Search &amp; Destroy 2.8.68.0</a> <span class="german-flag">Deutsch</span></div>
+</li>
+</ul>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row-aside-group">
+		<div class="box box--sidebar box-white toggle-box">
+			<h2 class="h2 h2--margin-0"><a href="/forum/leserartikel/">Leserartikel</a></h2>
+			<a href="#leserartikel" class="toggle-box__button js-toggle-button" data-toggle-method="css" data-toggle-cookie="homepage-toggle-leserartikel" aria-label="Toggle"><svg class="icon" width="28" height="28" viewBox="0 0 28 28"><path d="M28 9l-2.63-2.63L14 17.76 2.62 6.37 0 9l14 14L28 9z"/></svg></a>
+
+			<div class="toggle-box__body" id="leserartikel">
+				
+<ul class="ticker ticker--compact">
+	<li><time class="ticker__date" datetime="2020-04-30T06:16:33+02:00">06:16</time> <div class="ticker__body"><a href="/forum/threads/intel-core-i-serie-ram-overclocking-auswirkungen-auf-spiele.1849970/" title="Forum „Arbeitsspeicher“" class="js-thread-link">Intel Core i-Serie - RAM Overclocking (Auswirkungen auf Spiele)</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T05:34:58+02:00">05:34</time> <div class="ticker__body"><a href="/forum/threads/amd-ryzen-ram-oc-community.1829356/" title="Forum „Arbeitsspeicher“" class="js-thread-link ticker__link--bold">AMD Ryzen - RAM OC Community</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T00:54:24+02:00">00:54</time> <div class="ticker__body"><a href="/forum/threads/valve-index-hmd-review-vs-rift-cv1-vive.1933066/" title="Forum „Virtual Reality“" class="js-thread-link">Valve Index HMD Review vs Rift CV1/Vive</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-30T00:21:37+02:00">00:21</time> <div class="ticker__body"><a href="/forum/threads/anleitung-zum-undervolting-von-aktuellen-intel-nvidia-notebooks.1869825/" title="Forum „Notebooks: Diskussionen“" class="js-thread-link ticker__link--bold">Anleitung zum Undervolting von aktuellen Intel+Nvidia Notebooks</a></div></li>
+	<li class="ticker-item--separator"><time class="ticker__date" datetime="2020-04-29T19:46:37+02:00">29.04.</time> <div class="ticker__body"><a href="/forum/threads/vram-usage-aktueller-titel.636865/" title="Forum „Grafikkarten: Fachgespräche“" class="js-thread-link ticker__link--bold">VRAM-Usage aktueller Titel</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-29T03:16:49+02:00">29.04.</time> <div class="ticker__body"><a href="/forum/threads/how-to-rsync-ssh-und-oder-dyndns-am-raspberry-pi-zero-benutzen.1941642/" title="Forum „Einplatinencomputer (Raspberry Pi, Arduino, ...)“" class="js-thread-link">How-To: Rsync, SSH und/oder DynDNS am Raspberry Pi Zero benutzen</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-28T15:49:40+02:00">28.04.</time> <div class="ticker__body"><a href="/forum/threads/der-ideale-mini-itx-gaming-pc.1408442/" title="Forum „Desktop-Computer: Kaufberatung“" class="js-thread-link ticker__link--bold">Der ideale Mini-ITX-Gaming-PC</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-28T13:54:29+02:00">28.04.</time> <div class="ticker__body"><a href="/forum/threads/bitlocker-hardware-encryption-edrive.1847925/" title="Forum „Solid-State-Drives (SSD) und Flash-Speicher“" class="js-thread-link">BitLocker Hardware Encryption eDrive</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-27T15:12:56+02:00">27.04.</time> <div class="ticker__body"><a href="/forum/threads/cpu-und-bios-guide-fuer-ryzen-3000-und-aelter.1911429/" title="Forum „Overclocking und Undervolting von AMD-Systemen“" class="js-thread-link">CPU und Bios Guide für Ryzen 3000 (und älter)</a></div></li>
+	<li><time class="ticker__date" datetime="2020-04-26T21:59:33+02:00">26.04.</time> <div class="ticker__body"><a href="/forum/threads/sammelthread-intel-overclocking-7-8-9-generation-core.1867460/" title="Forum „Overclocking und Undervolting von Intel-Systemen“" class="js-thread-link ticker__link--bold">[Sammelthread] Intel Overclocking (7./8./9. Generation Core)</a></div></li>
+</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+</div></div>
+
+
+<div class="block1 block1--breakout non-critical"><div class="wrapper"><div class="row carousel">
+	<h2 class="carousel__heading"><a href="/tests/" class="carousel__heading-link">Neue Tests &amp; Berichte</a></h2>
+	<div class="slides-wrapper js-carousel-slides">
+<ul class="slides slides--10">
+		<li class="slide">
+			<a href="/2020-04/gears-tactics-benchmark-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/6/5/5/article-180x101.3ed65fbf.jpg" srcset="https://pics.computerbase.de/9/2/6/5/5/article-360x202.3ed65fbf.jpg 2x" width="180" height="101" alt="Gears Tactics im Test: Rundenstrategie auf technisch hohem Niveau" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Gears Tactics</span>
+					<span class="slide__title">Rundenstrategie auf technisch hohem Niveau</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/dell-p2720dc-test-usb-c-daisy-chaining/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/1/6/6/2/article-180x101.c8ede441.jpg" srcset="https://pics.computerbase.de/9/1/6/6/2/article-360x202.c8ede441.jpg 2x" width="180" height="101" alt="Dell P2720DC im Test: Sehr gute Farben treffen auf USB-C mit Daisy-Chaining" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Dell P2720DC</span>
+					<span class="slide__title">Sehr gute Farben treffen auf USB-C mit Daisy-Chaining</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/be-quiet-pure-base-500dx-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/2/7/5/article-180x101.09535cda.jpg" srcset="https://pics.computerbase.de/9/2/2/7/5/article-360x202.09535cda.jpg 2x" width="180" height="101" alt="be quiet! Pure Base 500DX im Test: Luftiger und bunter als das kompakte Original" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">be quiet! Pure Base 500DX</span>
+					<span class="slide__title">Luftiger und bunter als das kompakte Original</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-02/fortnite-benchmark-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/1/4/3/6/article-180x101.030712ce.jpg" srcset="https://pics.computerbase.de/9/1/4/3/6/article-360x202.030712ce.jpg 2x" width="180" height="101" alt="Fortnite im Benchmark: 29 Grafikkarten &amp; 5 iGPUs von AMD, Nvidia und Intel im Test" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Fortnite im Benchmark</span>
+					<span class="slide__title">29 Grafikkarten &amp; 5 iGPUs von AMD, Nvidia und Intel im Test</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/oppo-a91-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/5/7/6/article-180x101.326cec28.jpg" srcset="https://pics.computerbase.de/9/2/5/7/6/article-360x202.326cec28.jpg 2x" width="180" height="101" alt="Oppo A91 im Test: Für dieses Smartphone spricht zu wenig" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Oppo A91</span>
+					<span class="slide__title">Für dieses Smartphone spricht zu wenig</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/geforce-gtx-1650-gddr6-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/4/7/1/article-180x101.8bcfae7c.jpg" srcset="https://pics.computerbase.de/9/2/4/7/1/article-360x202.8bcfae7c.jpg 2x" width="180" height="101" alt="GeForce GTX 1650 GDDR6 im Test: Effizienter Turing-Einsteiger mit GDDR6" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">GeForce GTX 1650 GDDR6</span>
+					<span class="slide__title">Effizienter Turing-Einsteiger mit GDDR6</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/anker-soundcore-liberty-air-2-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/5/2/1/article-180x101.018791dd.jpg" srcset="https://pics.computerbase.de/9/2/5/2/1/article-360x202.018791dd.jpg 2x" width="180" height="101" alt="Anker SoundCore Liberty Air 2 im Test: Gute Ansätze scheitern am harten Klang" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">Anker SoundCore Liberty Air 2</span>
+					<span class="slide__title">Gute Ansätze scheitern am harten Klang</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/centrino-hardware-control-notebook-laufzeit-test-rueckblick/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/6/1/5/article-180x101.776e95d1.jpg" srcset="https://pics.computerbase.de/9/2/6/1/5/article-360x202.776e95d1.jpg 2x" width="180" height="101" alt="Im Test vor 15 Jahren: Längere Laufzeit mit Centrino Hardware Control" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">Im Test vor 15 Jahren</span>
+					<span class="slide__title">Längere Laufzeit mit Centrino Hardware Control</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/xcom-chimera-squad-benchmark-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/5/7/7/article-180x101.0a2c7cb1.jpg" srcset="https://pics.computerbase.de/9/2/5/7/7/article-360x202.0a2c7cb1.jpg 2x" width="180" height="101" alt="XCOM: Chimera Squad im Test: Ein gutes XCOM mit Vorteilen für Nvidia und Zen 2" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">XCOM: Chimera Squad</span>
+					<span class="slide__title">Ein gutes XCOM mit Vorteilen für Nvidia und Zen 2</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2020-04/lg-38gl950g-nano-ips-test/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/4/6/9/article-180x101.93cb7db4.jpg" srcset="https://pics.computerbase.de/9/2/4/6/9/article-360x202.93cb7db4.jpg 2x" width="180" height="101" alt="LG 38GL950G im Test: Gaming in 24:10 mit 175 Hz bei G-Sync und FreeSync" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Test</span>
+					<span class="slide__context">LG 38GL950G</span>
+					<span class="slide__title">Gaming in 24:10 mit 175 Hz bei G-Sync und FreeSync</span>
+				</span>
+			</a>
+		</li>
+
+</ul>
+</div>
+
+<div class="carousel-nav js-carousel-nav">
+	<a href="/tests/" class="js-carousel-prev carousel-nav__prev carousel-nav--disabled" aria-label="&lt;"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><path d="M10 16l3-3-5-5 5-5-3-3-8 8z"/></svg></a>
+	<a href="/tests/" class="js-carousel-next carousel-nav__next" aria-label="&gt;"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><path d="M6 0L3 3l5 5-5 5 3 3 8-8z"/></svg></a>
+</div>
+
+</div></div></div>
+
+
+<div class="block1 block1--default non-critical"><div class="wrapper clearfix">
+<div class="row-main box">
+	<ul class="content-list js-homepage-list3">
+	<li class="article">
+		
+		<a href="/2020-04/samsung-galaxy-note-20-exynos-992-leistung/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/6/8/0/article-75x75.2e517339.jpg" srcset="https://pics.computerbase.de/9/2/6/8/0/article-150x150.2e517339.jpg 2x" width="75" height="75" alt="Galaxy Note 20: Exynos 992 für mehr Leistung und weniger Verbrauch">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/samsung-galaxy-note-20-exynos-992-leistung/" class="visited-link">
+				<span class="article__context">Galaxy Note 20</span>
+				<span class="article__title">Exynos 992 für mehr Leistung und weniger Verbrauch</span>
+			</a></h2>
+
+			<p class="article__intro">Samsung soll für das Galaxy Note 20 den Exynos 992 mit mehr Leistung und weniger Verbrauch vorbereiten. Der Snapdragon 865+ verzögert sich.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/galaxy-note-20-exynos-992-fuer-mehr-leistung-und-weniger-verbrauch.1941472/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 75<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Frank Hüber</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/arm-flexible-access-startups-ip-nutzung/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/6/8/8/article-75x75.d7217a14.jpg" srcset="https://pics.computerbase.de/9/2/6/8/8/article-150x150.d7217a14.jpg 2x" width="75" height="75" alt="Arm Flexible Access: Lizenzmodell bietet Startups kostenlose IP-Nutzung">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/arm-flexible-access-startups-ip-nutzung/" class="visited-link">
+				<span class="article__context">Arm Flexible Access</span>
+				<span class="article__title">Lizenzmodell bietet Startups kostenlose IP-Nutzung</span>
+			</a></h2>
+
+			<p class="article__intro">Arm erweitert das Lizenzmodell Arm Flexible Access für Startups, die bis zu einer gewissen Fördersumme kostenlosen IP-Zugang erhalten.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/arm-flexible-access-lizenzmodell-bietet-startups-kostenlose-ip-nutzung.1941815/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 3<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Nicolas La Rocco</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/fedora-32-linux-5.6-gnome-3.36/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/7/0/0/article-75x75.7ee6eeb6.jpg" srcset="https://pics.computerbase.de/9/2/7/0/0/article-150x150.7ee6eeb6.jpg 2x" width="75" height="75" alt="Fedora 32: Distribution auf Basis von Linux 5.6 und Gnome 3.36">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/fedora-32-linux-5.6-gnome-3.36/" class="visited-link">
+				<span class="article__context">Fedora 32 <span class="article__update js-article-update-link" data-update-id="1" data-update-page="1">Update</span></span>
+				<span class="article__title">Distribution auf Basis von Linux 5.6 und Gnome 3.36</span>
+			</a></h2>
+
+			<p class="article__intro">Mit Fedora 32 und dessen Ablegern für Workstation, Server und IoT stellt das Fedora Projekt neue Distributionen auf Basis von Linux 5.6 vor.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/fedora-32-distribution-auf-basis-von-linux-5-6-und-gnome-3-36.1941712/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 37<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Sven Bauduin</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+<li>
+<ul class="ticker ticker--notes-box">
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/nvidia-gtc-2020-keynote-14-mai/" class="ticker__article-link"><span class="ticker__article-context">„Get Amped“<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Nvidia holt GTC 2020 Keynote am 14. Mai nach</span></a>&nbsp;<a href="/forum/threads/get-amped-nvidia-holt-gtc-2020-keynote-am-14-mai-nach.1940663/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 129</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/xbox-game-pass-red-dead-redemption-2/" class="ticker__article-link"><span class="ticker__article-context">Xbox Game Pass<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Red Dead Redemption 2 löst GTA V auf der Xbox ab</span></a>&nbsp;<a href="/forum/threads/xbox-game-pass-red-dead-redemption-2-loest-gta-v-auf-der-xbox-ab.1940630/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 37</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/amd-adrenalin-2020-edition-20.4.2-gears-tactics/" class="ticker__article-link"><span class="ticker__article-context">AMD Adrenalin 20.4.2<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Treiber für Gears Tactics und Predator: Hunting Grounds</span></a>&nbsp;<a href="/forum/threads/amd-adrenalin-20-4-2-treiber-fuer-gears-tactics-und-predator-hunting-grounds.1940501/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 80</a></div>
+</li>
+<li>
+	
+	<div class="ticker__body"><a href="/2020-04/trackmania-verschoben-gameplay-trailer/" class="ticker__article-link"><span class="ticker__article-context">Trackmania<span class="ticker__article-colon">:</span></span><span class="ticker__article-title"> Neuer Termin und Gameplay-Trailer zum Rennspiel-Remake</span></a>&nbsp;<a href="/forum/threads/trackmania-neuer-termin-und-gameplay-trailer-zum-rennspiel-remake.1940390/" class="ticker__comment-link js-thread-link"><svg class="icon" width="10" height="10" viewBox="0 0 10 10"><path d="M8.5 1h-7C.5 1 0 1.5 0 2.5v4C0 7.5.5 8.07 1.5 8H2v2l4-2h2.5c1 0 1.5-.5 1.5-1.5v-4c0-1-.5-1.5-1.5-1.5z"/></svg> 58</a></div>
+</li>
+</ul>
+</li>	<li class="article">
+		
+		<a href="/2020-02/sony-xperia-l4-vorstellung/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/1/5/5/0/article-75x75.f64f12b7.jpg" srcset="https://pics.computerbase.de/9/1/5/5/0/article-150x150.f64f12b7.jpg 2x" width="75" height="75" alt="Sony Xperia L4: 200-Euro-Smartphone erhält eine dritte Kamera und 64 GB">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-02/sony-xperia-l4-vorstellung/" class="visited-link">
+				<span class="article__context">Sony Xperia L4 <span class="article__update js-article-update-link" data-update-id="1" data-update-page="1">Update</span></span>
+				<span class="article__title">200-Euro-Smartphone erhält eine dritte Kamera und 64 GB</span>
+			</a></h2>
+
+			<p class="article__intro">Sony legt die Smartphones-Einsteigerklasse mit dem Xperia L4 für 199 Euro neu auf. Neu sind eine dritte Kamera und mehr Speicher.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/sony-xperia-l4-200-euro-smartphone-erhaelt-eine-dritte-kamera-und-64-gb.1925853/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 59<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Nicolas La Rocco</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/riot-valorant-vanguard/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/6/9/8/article-75x75.f6e478a8.jpg" srcset="https://pics.computerbase.de/9/2/6/9/8/article-150x150.f6e478a8.jpg 2x" width="75" height="75" alt="Valorant und Vanguard: Anti-Cheat-System soll transparenter werden">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/riot-valorant-vanguard/" class="visited-link">
+				<span class="article__context">Valorant und Vanguard</span>
+				<span class="article__title">Anti-Cheat-System soll transparenter werden</span>
+			</a></h2>
+
+			<p class="article__intro">Wer Valorant spielen möchte, muss mit dem umstrittenen Anti-Cheat-System Vanguard leben. Riot Games möchte Spieler jedoch stärker einbinden.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/valorant-und-vanguard-anti-cheat-system-soll-transparenter-werden.1941715/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 72<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Sven Bauduin</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/be-quiet-pure-base-500dx-test/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/2/7/5/article-75x75.dc0a673b.jpg" srcset="https://pics.computerbase.de/9/2/2/7/5/article-150x150.dc0a673b.jpg 2x" width="75" height="75" alt="be quiet! Pure Base 500DX im Test: Luftiger und bunter als das kompakte Original">
+			<span class="article__label">Test</span>
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/be-quiet-pure-base-500dx-test/" class="visited-link">
+				<span class="article__context">be quiet! Pure Base 500DX</span>
+				<span class="article__title">Luftiger und bunter als das kompakte Original</span>
+			</a></h2>
+
+			<p class="article__intro">Mit dem Pure Base 500DX legt be quiet! das kleinste Gehäuse in einer luftigeren und auf Wunsch erstmals bunt beleuchteten Version neu auf.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/be-quiet-pure-base-500dx-im-test-luftiger-und-bunter-als-das-kompakte-original.1941510/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 55<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Valentin Karnehm</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+	<li class="article">
+		
+		<a href="/2020-04/google-stadia-ea-pubg/" class="article__pic" tabindex="-1" aria-hidden="true">
+			<img loading="lazy" decoding="async" src="https://pics.computerbase.de/9/2/7/0/4/article-75x75.39df2be8.jpg" srcset="https://pics.computerbase.de/9/2/7/0/4/article-150x150.39df2be8.jpg 2x" width="75" height="75" alt="Stadia: EA und PUBG streamen ihre Spiele über Google">
+			
+		</a>
+		
+		<div class="article__main">
+			<h2 class="article__h2"><a href="/2020-04/google-stadia-ea-pubg/" class="visited-link">
+				<span class="article__context">Stadia</span>
+				<span class="article__title">EA und PUBG streamen ihre Spiele über Google</span>
+			</a></h2>
+
+			<p class="article__intro">Mit EA und dem Battle-Royale-Spiel PUBG konnte Google zwei große Namen für seinen Cloud-Gaming-Dienst Stadia gewinnen.</p>
+
+			<div class="article__meta">
+				<span class="article__meta-li"><a href="/forum/threads/stadia-ea-und-pubg-streamen-ihre-spiele-ueber-google.1941742/" class="article__comments-link js-thread-link"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M12.5 2h-11C.5 2 0 2.5 0 3.5v6c0 1 .5 1.5 1.5 1.5H3v3l4.7-3h4.8c1 0 1.5-.5 1.5-1.5v-6c0-1-.5-1.5-1.5-1.5zM12 9H7l-3 2V9H2V4h10z"/></svg> 26<span class="min-7in"> Kommentare</span></a></span>
+				<span class="article__meta-li"><span class="article__author"><svg class="icon" width="14" height="14" viewBox="0 0 14 14"><path d="M8.52 9.48c-.31-.04-.31-.88-.31-.88s.88-.87 1.08-2.06c.52 0 .81-1.25.32-1.7.02-.46.69-3.65-2.61-3.65-3.28 0-2.63 3.19-2.61 3.65-.52.45-.2 1.7.32 1.7A4.27 4.27 0 0 0 5.8 8.6s0 .84-.31.88C4.51 9.64.88 11.2.88 13H13.1c0-1.8-3.61-3.36-4.58-3.52z"/></svg> Sven Bauduin</span></span>
+				
+			</div>
+
+			
+			
+		</div>
+	</li>
+</ul>
+
+	<div class="more-links">
+		<a href="/2020-04/" class="more-link">Archiv April 2020</a>
+		<a href="/archiv/" class="more-link">Archiv-Index</a>
+	</div>
+
+	<div class="more-links">
+		Hier fehlt etwas? Tipps und Insider-Infos an <a href="mailto:redaktion~~computerbase.de">redaktion~~computerbase.de</a>!
+	</div>
+</div>
+
+<div class="row-aside">
+	<div class="row-aside-group">
+		<div class="box box--sidebar box-white">
+			<h2 class="h2">Meistgelesene News</h2>
+			<ol class="charts">
+	<li>
+		<a href="/2020-04/windows-10-mai-2020-update-suchindex-hdd-beschleunigt/" class="charts__link charts__link--compact visited-link">
+			<div class="charts__left">
+				<div class="charts__rank charts__rank--simple charts__rank--1">1</div>
+			</div>
+
+			<div class="charts__main">
+				<div class="charts__context">Windows 10</div>
+				<div class="charts__title">Mai 2020 Update beschleunigt Systeme mit HDD</div>
+				<div class="charts__bar w-100">100%</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="/2020-04/loewe-handfertigung-oled-tvs-deutschland/" class="charts__link charts__link--compact visited-link">
+			<div class="charts__left">
+				<div class="charts__rank charts__rank--simple charts__rank--2">2</div>
+			</div>
+
+			<div class="charts__main">
+				<div class="charts__context">Loewe</div>
+				<div class="charts__title">Handfertigung für OLED-TVs in Deutschland angelaufen</div>
+				<div class="charts__bar w-87">87%</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="/2020-04/xiaomi-mi-10-lite-zoom-edition-miui-12/" class="charts__link charts__link--compact visited-link">
+			<div class="charts__left">
+				<div class="charts__rank charts__rank--simple charts__rank--3">3</div>
+			</div>
+
+			<div class="charts__main">
+				<div class="charts__context">Mi 10 Lite Zoom Edition</div>
+				<div class="charts__title">Xiaomi setzt auf Periskop-Kamera und MIUI 12</div>
+				<div class="charts__bar w-86">86%</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="/2020-04/samsung-galaxy-note-20-exynos-992-leistung/" class="charts__link charts__link--compact visited-link">
+			<div class="charts__left">
+				<div class="charts__rank charts__rank--simple charts__rank--4">4</div>
+			</div>
+
+			<div class="charts__main">
+				<div class="charts__context">Galaxy Note 20</div>
+				<div class="charts__title">Exynos 992 für mehr Leistung und weniger Verbrauch</div>
+				<div class="charts__bar w-80">80%</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="/2020-04/quartalsbericht-amd-ryzen-navi/" class="charts__link charts__link--compact visited-link">
+			<div class="charts__left">
+				<div class="charts__rank charts__rank--simple charts__rank--5">5</div>
+			</div>
+
+			<div class="charts__main">
+				<div class="charts__context">Quartalsbericht</div>
+				<div class="charts__title">AMD landet dank Ryzen und Navi auf dem Punkt</div>
+				<div class="charts__bar w-64">64%</div>
+			</div>
+		</a>
+	</li>
+</ol>
+
+			<div class="charts-info"><b>Datenbasis:</b> News der letzten 72 Stunden.</div>
+		</div>
+	</div>
+
+	<div class="row-aside-group">
+		<div class="box"><div class="adbox adbox-rectangle" data-adpos="rectangle:sidebar-2"><noscript><iframe src="/api/ads?name=noscript&amp;format=300x250" width="300" height="250"></iframe></noscript></div></div>
+
+		<div class="box box--sidebar box-white">
+			<h2 class="h2">ComputerBase unterstützen</h2>
+			<div class="support-us">
+				<p>Sie wollen online einkaufen? Dann nutzen Sie bitte einen der folgenden Affiliate-Links, um ComputerBase zu unterstützen.</p>
+
+				<ul class="ul">
+					<li><a href="https://www.alternate.de/?partner=cobade2012" target="_blank" rel="nofollow noopener sponsored" class="external-link">Alternate</a></li>
+					<li><a href="https://www.amazon.de/?tag=cb-homepage-21" target="_blank" rel="nofollow noopener sponsored" class="external-link">Amazon.de</a></li>
+					<li><a href="https://www.caseking.de/?sPartner=35" target="_blank" rel="nofollow noopener sponsored" class="external-link">Caseking</a></li>
+					<li><a href="https://rover.ebay.com/rover/1/707-53477-19255-0/1?ff3=4&amp;pub=5574914739&amp;toolid=10001&amp;campid=5336674073&amp;mpre=http%3A%2F%2Fwww.ebay.de%2F" target="_blank" rel="nofollow noopener sponsored" class="external-link">eBay</a></li>
+					<li><a href="https://www.awin1.com/cread.php?awinmid=12252&amp;awinaffid=399269&amp;p=https%3A%2F%2Fwww.mindfactory.de%2F" target="_blank" rel="nofollow noopener sponsored" class="external-link">Mindfactory</a></li>
+					<li><a href="https://www.thomann.de/de/index.html?offid=1&amp;affid=396" target="_blank" rel="nofollow noopener sponsored" class="external-link">Thomann</a></li>
+				</ul>
+
+				<p>Vielen Dank!</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div></div>
+
+
+<div class="block1 block1--breakout non-critical"><div class="wrapper"><div class="row carousel js-homepage-reviews-carousel">
+	<h2 class="carousel__heading">Kaufberatung</h2>
+	<div class="slides-wrapper js-carousel-slides">
+<ul class="slides slides--6">
+		<li class="slide">
+			<a href="/thema/prozessor/rangliste/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/5/5/5/8/7/article-180x101.7c18b8ec.jpg" srcset="https://pics.computerbase.de/5/5/5/8/7/article-360x202.7c18b8ec.jpg 2x" width="180" height="101" alt="Prozessor-Rangliste: CPU-Vergleich mit AMD Ryzen &amp; Intel Core für April 2020" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">Prozessor-Rangliste</span>
+					<span class="slide__title">CPU-Vergleich mit AMD Ryzen &amp; Intel Core für April 2020</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/thema/grafikkarte/rangliste/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/5/7/5/1/9/article-180x101.a69b82ec.jpg" srcset="https://pics.computerbase.de/5/7/5/1/9/article-360x202.a69b82ec.jpg 2x" width="180" height="101" alt="Grafikkarten-Rangliste 2020: GPU-Vergleich mit Emp­feh­lungen für Navi und Turing im April" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">Grafikkarten-Rangliste 2020</span>
+					<span class="slide__title">GPU-Vergleich mit Emp­feh­lungen für Navi und Turing im April</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/2016-01/usb-typ-c/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/7/0/0/4/5/article-180x101.be4f4e8d.jpg" srcset="https://pics.computerbase.de/7/0/0/4/5/article-360x202.be4f4e8d.jpg 2x" width="180" height="101" alt="USB Typ C: Stecker und sein Verhältnis zu USB &amp; Thunderbolt erklärt" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">USB Typ C</span>
+					<span class="slide__title">Stecker und sein Verhältnis zu USB &amp; Thunderbolt erklärt</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/thema/netzteil/rangliste/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/6/2/5/9/0/article-180x101.ebdca247.jpg" srcset="https://pics.computerbase.de/6/2/5/9/0/article-360x202.ebdca247.jpg 2x" width="180" height="101" alt="PC-Netzteile im Test: Vergleich und Kaufberatung für Frühjahr 2020" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">PC-Netzteile</span>
+					<span class="slide__title">Vergleich und Kaufberatung für Frühjahr 2020</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/thema/ram/rangliste/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/8/8/1/0/8/article-180x101.f43f9fe8.jpg" srcset="https://pics.computerbase.de/8/8/1/0/8/article-360x202.f43f9fe8.jpg 2x" width="180" height="101" alt="Aus der Community: RAM-Empfehlungen für AMD Ryzen und Intel Core" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">Aus der Community</span>
+					<span class="slide__title">RAM-Empfehlungen für AMD Ryzen und Intel Core</span>
+				</span>
+			</a>
+		</li>
+		<li class="slide">
+			<a href="/thema/ssd/rangliste/" class="visited-link">
+				
+				<img loading="lazy" decoding="async" src="https://pics.computerbase.de/5/9/4/5/6/article-180x101.8c95a6f4.jpg" srcset="https://pics.computerbase.de/5/9/4/5/6/article-360x202.8c95a6f4.jpg 2x" width="180" height="101" alt="SSD-Tests &amp; Vergleich: Empfehlungen mit PCIe &amp; SATA für Dezember 2019" class="slide__image" aria-hidden="true">
+				<span class="slide__text">
+					<span class="slide__label">Bericht</span>
+					<span class="slide__context">SSD-Tests &amp; Vergleich</span>
+					<span class="slide__title">Empfehlungen mit PCIe &amp; SATA für Dezember 2019</span>
+				</span>
+			</a>
+		</li>
+
+</ul>
+</div>
+
+<div class="carousel-nav js-carousel-nav">
+	<a href="/tests/" class="js-carousel-prev carousel-nav__prev carousel-nav--disabled" aria-label="&lt;"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><path d="M10 16l3-3-5-5 5-5-3-3-8 8z"/></svg></a>
+	<a href="/tests/" class="js-carousel-next carousel-nav__next" aria-label="&gt;"><svg class="icon" width="16" height="16" viewBox="0 0 16 16"><path d="M6 0L3 3l5 5-5 5 3 3 8-8z"/></svg></a>
+</div>
+
+</div></div></div>
+
+
+
+</main>
+
+<footer class="footer footer--with-cookie-consent js-show-cookie-consent non-critical">
+	<div class="block1 footer1">
+		<div class="wrapper">
+			<a href="/jobs/" class="row row-13 footer1__box">
+				<span class="footer1__heading"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M9 15l3-1.5L22.5 3 21 1.5 10.5 12 9 15zm-2.22 5.32a5.73 5.73 0 0 0-3.1-3.1L6 10.82 9 9l9-9h-4.5l-9 9L0 24l15-4.5 9-9V6l-9 9-1.83 3z"/></svg>&nbsp; Redakteur/in werden!</span>
+				<span class="footer1__text">Lust auf IT und Spaß am Schreiben? Die Redaktion sucht freie Mitarbeiter/innen. <em>Jetzt informieren und bewerben!</em></span>
+			</a>
+
+			<a href="/warum-anzeigen/" class="row row-13 footer1__box">
+				<span class="footer1__heading"><svg class="icon" width="32" height="28" viewBox="0 0 32 28"><path d="M32 11.4C32 5.12 30 .01 28 0h-2s-6.76 4.57-15.53 6.37a29.61 29.61 0 0 0 0 10.1C19.24 18.25 26 22.8 26 22.8h2c2-.01 4-5.12 4-11.4zm-5 9.7c-1.14 0-3-3.74-3-9.7 0-5.96 1.89-9.7 3-9.7s3 3.71 3 9.7c0 5.99-1.86 9.7-3 9.7zM7.87 11.41c0-1.62.12-3.2.34-4.65-2.4.33-4.14.32-6.48.32L0 10.04v2.75l1.73 2.96c1.7-.03 4.2.01 6.48.32a30.65 30.65 0 0 1-.34-4.65zm3.63 6.66l-4-.77 2.56 10.05c.13.52.65.78 1.15.58l3.7-1.48c.5-.2.7-.75.45-1.22zM27 15.1c-.54.04-1.22-1.71-1.2-3.7.02-1.99.71-3.7 1.2-3.7s1.23 1.67 1.2 3.7c-.03 2.03-.66 3.66-1.2 3.7z"/></svg>&nbsp; Warum Werbebanner?</span>
+				<span class="footer1__text">ComputerBase berichtet unabhängig und verkauft deshalb keine Inhalte, sondern Werbebanner. <em>Mehr erfahren!</em></span>
+			</a>
+
+			<a href="/abo/" class="row row-13 footer1__box">
+				<span class="footer1__heading"><svg class="icon" width="28" height="28" viewBox="0 0 28 28"><path d="M26.88 1.5C17.73 8.42 8.96 17.68 8.96 17.68L2.64 12 0 14.69c2.6 2.44 8.62 8.9 10.65 11.31C16.4 16.42 22.35 9.28 28 2.75L26.88 1.5z"/></svg> ComputerBase Pro</span>
+				<span class="footer1__text">ComputerBase Pro ist die werbefreie, schnelle, flexible und zugleich faire Variante von ComputerBase. <em>Mehr dazu!</em></span>
+			</a>
+		</div>
+	</div>
+
+	<div class="block1 footer2">
+		<div class="wrapper">
+			<div class="row">
+				<ul class="footer2-follow-links">
+					<li><a href="/feeds/" class="follow-feed2" title="35.000+ Feed-Abonnenten">Feeds</a></li>
+					<li><a href="/push/" class="follow-push2" title="Push-Benachrichtigungen">Push</a></li>
+					<li><a href="https://www.facebook.com/computerbase" target="_blank" rel="noopener" class="follow-facebook2" title="17.540 Likes auf Facebook">Facebook</a></li>
+					<li><a href="https://twitter.com/ComputerBase" target="_blank" rel="noopener" class="follow-twitter2" title="10.044 Follower auf Twitter">Twitter</a></li>
+					<li><a href="https://mastodon.social/@ComputerBase" target="_blank" rel="me noopener" class="follow-mastodon2" title="280 Follower auf Mastodon">Mastodon</a></li>
+					<li><a href="https://www.youtube.com/user/ComputerBase" target="_blank" rel="noopener" class="follow-youtube2" title="3.760 Fans auf YouTube">YouTube</a></li>
+				</ul>
+
+				<div class="footer2-boxes">
+					<a href="/forum/threads/probleme-mit-anzeigen-werbung-button-probleme-mit-einem-werbebanner-klicken.1573670/" class="footer2-box footer2-box-ads js-bug-report-link">Probleme mit einem<br> Werbebanner?</a>
+					<a href="/einstellungen/" class="footer2-box footer2-box-settings">Einstellungen und<br> Layout-Umschalter</a>
+				</div>
+
+				<div class="footer2-copyright">
+					© 1999–2020 ComputerBase GmbH
+				</div>
+
+				<ul class="footer2-links">
+					<li><a href="/impressum/">Impressum</a></li>
+					<li><a href="/kontakt/">Kontakt</a></li>
+					<li><a href="/mediadaten/">Mediadaten</a></li>
+					<li><a href="/datenschutz/">Datenschutz</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+<div class="stats-pixel" id="js-stats" data-section="index" data-szm-code="Startseite" data-params="section=index">
+<noscript><img src="/api/nlytcs?section=index&amp;url=https%3A%2F%2Fwww.computerbase.de%2F" width="1" height="1" alt=""></noscript>
+
+</div>
+
+
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","name":"ComputerBase","url":"https://www.computerbase.de/","potentialAction":{"@type":"SearchAction","target":"https://www.computerbase.de/suche/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","url":"https://www.computerbase.de/","logo":"https://www.computerbase.de/img/logo-opengraph.png","sameAs":["https://www.facebook.com/computerbase","https://twitter.com/ComputerBase","https://www.youtube.com/user/ComputerBase"]}</script>
+
+<script type="application/json" id="js-config">{"picsUrl":"https://pics.computerbase.de","section":"index","vapidPublicKey":"BGFdJPPXBldsuJSd7i2IHA6zgp+FEZxD2BgS1f1A71ABYSfVI4lAPRPWa1ov1Q9OY+8r6AJD9p4xD42V6mr1Gkw="}</script>
+
+<script async src="/js/main.7c6c83c1.js"></script>
+<script async src="/js/ads.5b28cd12.js" id="js-ads" data-provider-mobile="himedia" data-provider-desktop="himedia" data-himedia-zone="home" data-halfpage="1" data-understitial="1" data-bgclick="1"></script>
+
+</body>
+</html>
