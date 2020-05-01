@@ -140,8 +140,13 @@ void* ReadControlFile(void *arg1 , void *arg2)
 
         unique_lock<mutex> locker(fifo->_mut_acces_qeue);
         fifo->EndTransmission();
+        locker.unlock();
 
         InputFD.close();
+
+
+
+    printf("Reader : CLOSED.\n");
 
         return NULL;
 }
@@ -178,13 +183,7 @@ void* ContactServer(void *arg1, void *arg2)
         fifo->notFull.notify_one();         //the only one waiting for it is the Reader
         locker.unlock();
 
-
-        //std::vector<char> charline(line.begin(), line.end());
-        //charline.push_back('\0');
-
-        //char *url =  new char[sizeof(line) + 1];
-        //strncpy(url,line.c_str(),sizeof(line) + 1);
-
+        char *line_url = strdup(line.c_str());
         char *url = strdup(line.c_str());
 
         strtok(url,"/");                    //!!!!!!!!!!!!!
@@ -197,27 +196,32 @@ void* ContactServer(void *arg1, void *arg2)
         else
         {
             char filename[64];
-            snprintf(filename, sizeof(filename),"%s.html",domain);
+            snprintf(filename, sizeof(filename),"%i_%s.html", *CLientNr, domain);
 
-            printf("[START] Downloading URL: %s ->> File: %s\n", url, filename);
+            printf("[START] Downloading URL: %s ->> File: %s\n", line_url, filename);
 
             int res;
 
-            res = webreq_download(url,filename);
+            res = webreq_download(line_url,filename);
 
             if (res < 0)
-                fprintf(stderr, "[ERROR] URL: %s, Message: %s\n", url , webreq_error(res));
+                fprintf(stderr, "[ERROR] URL: %s, Message: %s\n", line_url , webreq_error(res));
             else if (res != WEBREQ_HTTP_OK)
-                fprintf(stderr, "[ERROR] HTTP Status %d returned for URL: %s\n", res, url);
+                fprintf(stderr, "[ERROR] HTTP Status %d returned for URL: %s\n", res, line_url);
             else
-                printf("[DONE ] URL: %s ->> File: %s\n", url, filename);
+                printf("[DONE ] URL: %s ->> File: %s\n", line_url, filename);
 
             
         }
 
+        free(url);
+        free(line_url);
+
         cnt++;
         usleep(20000 + cnt*30000);          //maybe we must wait less time because we contact the server before it
     }
+
+    printf("CLient : %d FINISHED\n",*CLientNr);
 
     return NULL;
 }
