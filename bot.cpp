@@ -9,14 +9,13 @@
 #include <fstream>
 #include <string>
 #include <cstdio>
-//#include <cstring>
 #include <string.h> 
 #include <malloc.h>
 #include <sys/time.h> 
-#include "web_request.h"
+#include "include/web_request.h"
 
 #define SIZEQUEUE 10
-#define CLIENTAMOUNT 5
+#define CLIENTAMOUNT 20
 
 void *ReadControlFile(void *arg1, void *arg2);
 void *ContactServer(void *arg1, void *arg2);
@@ -94,18 +93,11 @@ void* ReadControlFile(void *arg1 , void *arg2)
     
     ifstream InputFD(file);
     string line;
-    int cnt = 0;
-    
-
-    //InputFileDescriptor.open(std::string(file),std::ifstream::in);
 
         if( InputFD.is_open())
         {
             while(getline(InputFD,line))
             {
-                //char *line_C = new char[sizeof(line) + 1];
-                //strncpy(line_C,line.c_str(),sizeof(line) + 1); ///////!!!!!!!!!!!!
-
                 char *line_C = strdup(line.c_str());
 
                 std::unique_lock<mutex> locker_getline(fifo->_mut_acces_qeue);
@@ -116,7 +108,6 @@ void* ReadControlFile(void *arg1 , void *arg2)
                     fifo->notFull.wait(locker_getline);         //wait until Fifo not full
                 }
 
-                //if (strtok_r(line_C,"\r\n",&line_C) == NULL)
                 if(strtok(line_C,"\r\n") == NULL)
                 {
                     free(line_C);
@@ -125,11 +116,7 @@ void* ReadControlFile(void *arg1 , void *arg2)
 
                 fifo->Add_Item(line);
                 printf("Reader: read %s \n", line.c_str());
-                fifo->notEmpty.notify_one();//!!!!!!!            //tell all threads that FIFO not empty
-                locker_getline.unlock();                        //maybe not necessary
-
-                cnt++;
-                usleep(10000 + cnt*10000);
+                fifo->notEmpty.notify_one();           
             }
         }
         else
@@ -140,11 +127,8 @@ void* ReadControlFile(void *arg1 , void *arg2)
 
         unique_lock<mutex> locker(fifo->_mut_acces_qeue);
         fifo->EndTransmission();
-        locker.unlock();
 
         InputFD.close();
-
-
 
     printf("Reader : CLOSED.\n");
 
@@ -157,8 +141,6 @@ void* ContactServer(void *arg1, void *arg2)
     Queue *fifo = ( Queue *) arg1;
     int *CLientNr = (int *) arg2;
     string line;
-    int cnt = 0;
-
 
     while(true)
     {
@@ -166,11 +148,11 @@ void* ContactServer(void *arg1, void *arg2)
 
         if(fifo->TransmissionDone() == true && fifo->isEmpty() == true)
         {
-            locker.unlock();                //maybe not necessary 
+            locker.unlock();               
             break;
         }
         
-        if(fifo->isEmpty())
+        else if(fifo->TransmissionDone() == false && fifo->isEmpty() == true)
         {
             //printf("client %d : FIFO empty.\n",std::thread::id);
             printf("Client %d  : FIFO empty.\n",*CLientNr);
@@ -178,20 +160,19 @@ void* ContactServer(void *arg1, void *arg2)
         }
 
         fifo->Delete_Intem(line);
-        //printf("Client %d : consumed %s\n", std::thread::id,line);
         printf("Client %d  : consumed \n",*CLientNr);
-        fifo->notFull.notify_one();         //the only one waiting for it is the Reader
+        fifo->notFull.notify_one();         
         locker.unlock();
 
         char *line_url = strdup(line.c_str());
         char *url = strdup(line.c_str());
 
-        strtok(url,"/");                    //!!!!!!!!!!!!!
-        char *domain = strtok(NULL, "/");    //!!!!!!!!!!!!!
+        strtok(url,"/");                    
+        char *domain = strtok(NULL, "/");    
 
         if( domain == NULL)
         {
-            fprintf(stderr, "Extraction of domain from URL [%s] failed, skiping...\n", url);
+            fprintf(stderr, "Extraction of domain from URL [%s] failed, skiping...\n", line_url);
         }
         else
         {
@@ -210,15 +191,10 @@ void* ContactServer(void *arg1, void *arg2)
                 fprintf(stderr, "[ERROR] HTTP Status %d returned for URL: %s\n", res, line_url);
             else
                 printf("[DONE ] URL: %s ->> File: %s\n", line_url, filename);
-
-            
         }
 
         free(url);
         free(line_url);
-
-        cnt++;
-        usleep(20000 + cnt*30000);          //maybe we must wait less time because we contact the server before it
     }
 
     printf("CLient : %d FINISHED\n",*CLientNr);
@@ -230,32 +206,24 @@ int main(int argc, char *argv[]){
 
     Queue fifo;
     char *filename = argv[1];
-    int ClientNr[CLIENTAMOUNT];
-
-    for(int i = 0; i < 4; i++)
-        printf("%s\n",argv[i]);
-
+    
     if(argc < 2)
     {
         fprintf(stderr,"Please give the control file as an argument\n");
         exit(EXIT_FAILURE);
     }
 
-    webreq_init(argc, argv);    //maybe place it after the Clients's declaration
+    webreq_init(argc, argv);   
 
-    
     thread ReaderThread(ReadControlFile, &fifo, filename);
-    vector<thread> Clients;       //you could also declarate a normal array
-    Clients.reserve(CLIENTAMOUNT);
+    thread Clients[CLIENTAMOUNT];
+    int ClientNr[CLIENTAMOUNT];
 
     for(int i = 0; i < CLIENTAMOUNT; i++)
     {
         ClientNr[i] = i;
-        Clients.emplace_back(ContactServer, &fifo, &ClientNr[i]);
+        Clients[i] = thread(ContactServer,&fifo,&ClientNr[i]);
     }
-        
-
-        //Clients.push_back(std::thread(ContactServer, &fifo));
 
     //Wait for threads to terminate execution
     ReaderThread.join();      
