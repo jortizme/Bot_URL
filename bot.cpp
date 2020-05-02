@@ -12,7 +12,7 @@
 #include "include/web_request.h"
 
 #define SIZEQUEUE 10
-#define CLIENTAMOUNT 5
+#define CLIENTAMOUNT 20
 
 void *ReadControlFile(void *arg1, void *arg2);
 void *ContactServer(void *arg1, void *arg2);
@@ -240,10 +240,6 @@ int main(int argc, char *argv[]){
     uint64_t before_ms = ((before.tv_sec * 1000000000) + before.tv_nsec) / 1000000;
     uint64_t after_ms =  ((after.tv_sec * 1000000000) + after.tv_nsec) /1000000;
     int64_t elapsed = after_ms - before_ms;
-
-    printf("%lu microseconds before\n", before_ms);
-    printf("%lu microseconds after\n", after_ms);
-    printf("%ld microseconds elapsed\n", elapsed);
 
     // free mem
     webreq_cleanup();
