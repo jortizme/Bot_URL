@@ -5,13 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <vector>   
+//#include <vector>   
 #include <fstream>
 #include <string>
-#include <cstdio>
+//#include <cstdio>
 #include <string.h> 
-#include <malloc.h>
-#include <sys/time.h> 
+//#include <malloc.h>
+#include <time.h> 
+//#include <ctime>
 #include "include/web_request.h"
 
 #define SIZEQUEUE 10
@@ -206,14 +207,18 @@ int main(int argc, char *argv[]){
 
     Queue fifo;
     char *filename = argv[1];
-    
-    if(argc < 2)
+    struct timespec before;
+    struct timespec after;
+
+    if(argc < 6)
     {
-        fprintf(stderr,"Please give the control file as an argument\n");
+        fprintf(stderr,"Too few arguments\n");
         exit(EXIT_FAILURE);
     }
 
     webreq_init(argc, argv);   
+
+    clock_gettime(CLOCK_MONOTONIC,&before);
 
     thread ReaderThread(ReadControlFile, &fifo, filename);
     thread Clients[CLIENTAMOUNT];
@@ -229,6 +234,16 @@ int main(int argc, char *argv[]){
     ReaderThread.join();      
     for(int i = 0; i < CLIENTAMOUNT; i++)
         Clients[i].join();
+
+    clock_gettime(CLOCK_MONOTONIC,&after);
+
+    uint64_t before_ns = (before.tv_sec * 1000000000) + before.tv_nsec;
+    uint64_t after_ns =  (after.tv_sec * 1000000000) + after.tv_nsec;
+    int64_t elapsed = after_ns - before_ns;
+
+    printf("%lu microseconds before\n", before_ns / 1000);
+    printf("%lu microseconds after\n", after_ns / 1000 );
+    printf("%ld microseconds elapsed\n", elapsed / 1000 );
 
     // free mem
     webreq_cleanup();
