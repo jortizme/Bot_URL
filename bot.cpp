@@ -4,19 +4,15 @@
 #include <condition_variable>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-//#include <vector>   
+#include <unistd.h>  
 #include <fstream>
 #include <string>
-//#include <cstdio>
 #include <string.h> 
-//#include <malloc.h>
 #include <time.h> 
-//#include <ctime>
 #include "include/web_request.h"
 
 #define SIZEQUEUE 10
-#define CLIENTAMOUNT 20
+#define CLIENTAMOUNT 5
 
 void *ReadControlFile(void *arg1, void *arg2);
 void *ContactServer(void *arg1, void *arg2);
@@ -210,11 +206,15 @@ int main(int argc, char *argv[]){
     struct timespec before;
     struct timespec after;
 
-    if(argc < 6)
+    if(argc != 7)
     {
         fprintf(stderr,"Too few arguments\n");
         exit(EXIT_FAILURE);
     }
+
+    char *timefile = argv[6];
+    char *proxydelay = argv[3];
+  
 
     webreq_init(argc, argv);   
 
@@ -237,16 +237,31 @@ int main(int argc, char *argv[]){
 
     clock_gettime(CLOCK_MONOTONIC,&after);
 
-    uint64_t before_ns = (before.tv_sec * 1000000000) + before.tv_nsec;
-    uint64_t after_ns =  (after.tv_sec * 1000000000) + after.tv_nsec;
-    int64_t elapsed = after_ns - before_ns;
+    uint64_t before_ms = ((before.tv_sec * 1000000000) + before.tv_nsec) / 1000000;
+    uint64_t after_ms =  ((after.tv_sec * 1000000000) + after.tv_nsec) /1000000;
+    int64_t elapsed = after_ms - before_ms;
 
-    printf("%lu microseconds before\n", before_ns / 1000);
-    printf("%lu microseconds after\n", after_ns / 1000 );
-    printf("%ld microseconds elapsed\n", elapsed / 1000 );
+    printf("%lu microseconds before\n", before_ms);
+    printf("%lu microseconds after\n", after_ms);
+    printf("%ld microseconds elapsed\n", elapsed);
 
     // free mem
     webreq_cleanup();
+
+    ofstream filetimefd (timefile, ios::app | ios::out);
+
+    if(filetimefd.is_open())
+    {
+        filetimefd << "Proxy delay: " << proxydelay 
+                   << ", Number of Threads: " << CLIENTAMOUNT 
+                   << ", Elapsed time in ms : " << elapsed << std::endl;
+        filetimefd.close();
+    }
+    else
+    {
+        printf("Unable to open %s\n",timefile);
+    }
+    
 
     exit(EXIT_SUCCESS);
 }
