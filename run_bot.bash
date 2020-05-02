@@ -14,7 +14,7 @@ execute(){
 }
 
 TIMEFILE="elapsed_time.txt"
-DOWNLOADDIR="downloads
+DOWNLOADDIR="downloads"
 
 echo " Please enter the File you want to read the internet sides from "
 
@@ -22,7 +22,7 @@ read SITESFILE
 
 if [ ! -f $SITESFILE ]; then
 	
-	echo "$SITESFILE doesn't exists"
+	echo "$SITESFILE doesnt exists"
 	echo
 	exit
 fi
