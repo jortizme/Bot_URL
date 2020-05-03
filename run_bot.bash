@@ -1,24 +1,23 @@
-# Skript zum Testen des Bots:
-# Startet den Bot auf Datei testSites_10_2019.txt, 
-# Delay fuer Zugriff auf Seite wird auf 100 ms eingestellt, 
-# gelesene Daten werden in Verzeichnis 'download' geschrieben. 
+# Skript zum Testen des Bots: 
+# gelesene Daten werden in Verzeichnis 'download/$(Anzahl-Treads)/$(Delayin-ms)' geschrieben. 
 #
 
 execute(){
 
-./bot $1 --webreq-delay 0 --webreq-path $2/$3_0ms $4
-./bot $1 --webreq-delay 300 --webreq-path $2/$3_300ms $4
-./bot $1 --webreq-delay 500 --webreq-path $2/$3_500ms $4
-./bot $1 --webreq-delay 1000 --webreq-path $2/$3_1000ms $4
+./bot $1 --webreq-delay 0 --webreq-path $2/$3/0ms $4
+./bot $1 --webreq-delay 300 --webreq-path $2/$3/300ms $4
+./bot $1 --webreq-delay 500 --webreq-path $2/$3/500ms $4
+./bot $1 --webreq-delay 1000 --webreq-path $2/$3/1000ms $4
 
 }
 
 TIMEFILE="elapsed_time.txt"
 DOWNLOADDIR="downloads"
 
-echo " Please enter the File you want to read the internet sides from "
+echo " Please enter the file you want to read the internet sides from "
 
 read SITESFILE
+echo
 
 if [ ! -f $SITESFILE ]; then
 	
@@ -39,12 +38,15 @@ if [ ! -d $DOWNLOADDIR ]; then
 
 	mkdir $DOWNLOADDIR
 else
-	cd $DOWNLOADDIR
-	rm -r *ms
-	cd ..
+	rm -r $DOWNLOADDIR
+	mkdir $DOWNLOADDIR
 fi
 
-echo "Please enter the number of times you want to run the test.."
+echo "A single test runs the program with the set amount of clients"
+echo "varying the proxy delay (0,300,500 and 1000 ms). To look at the "
+echo "results open the $TIMEFILE file"
+echo
+echo "How many times do you want to run the test?"
 
 read CHANGENUMBER
 
@@ -53,15 +55,18 @@ COUNTER=0
 while [ "$COUNTER" -ne "$CHANGENUMBER" ]; do
 	
 	echo	
-	echo "Please set the number of clients at the beginning of bot.cpp"
-      	echo "Compile the file and enter the amount of clients to run the test..."
+	echo "Please change the amount of clients at the beginning of bot.cpp"
+      	echo "Compile the file and press [ENTER]"
+	read
+	echo "Enter the amount of clients set..."
+
  	read CLIENTAMOUNT
 	
 	echo "" >> $TIMEFILE
 	execute $SITESFILE $DOWNLOADDIR $CLIENTAMOUNT $TIMEFILE
 	((COUNTER++))	
 
-done	
+done
 
 echo "Test finished..."
 exit

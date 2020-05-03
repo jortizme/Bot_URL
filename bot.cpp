@@ -1,3 +1,8 @@
+//Veranstaltung: Betriebssysteme 
+//Name, Matrikel-Nr: Joaquin Alejandro Ortiz Meza - 835862 
+//Datum: 02.05.2020
+//joaquin.ortiz-meza@hs-osnabrueck.de
+
 #include <thread>
 #include <mutex>
 #include <atomic>
@@ -17,26 +22,24 @@
 void *ReadControlFile(void *arg1, void *arg2);
 void *ContactServer(void *arg1, void *arg2);
 
-using namespace std;
-
 class Queue{
 
 private:
 
-    string buf[SIZEQUEUE];
+    std::string buf[SIZEQUEUE];
     uint32_t write, read;
     bool empty, full, ReaderisDone;
 
 public: 
-    mutex _mut_acces_qeue;
-    condition_variable notFull, notEmpty;
+    std::mutex _mut_acces_qeue;
+    std::condition_variable notFull, notEmpty;
 
 public:
     Queue();
     ~Queue();
 
-    void Add_Item(const string& NewURL);
-    void Delete_Intem(string& ReadURL);
+    void Add_Item(const std::string& NewURL);
+    void Delete_Intem(std::string& ReadURL);
     void EndTransmission(){ ReaderisDone = true;}
     bool isEmpty() const { return empty;}
     bool isFull() const {return full;}
@@ -55,7 +58,7 @@ Queue::Queue()
 
 Queue::~Queue(){}
 
-void Queue::Add_Item(const string& NewURL)
+void Queue::Add_Item(const std::string& NewURL)
 {
     buf[write] = NewURL;
     write++;
@@ -69,7 +72,7 @@ void Queue::Add_Item(const string& NewURL)
     empty = false;
 }
 
-void Queue::Delete_Intem(string& ReadURL)
+void Queue::Delete_Intem(std::string& ReadURL)
 {
     ReadURL = buf[read];
     read++;
@@ -82,14 +85,14 @@ void Queue::Delete_Intem(string& ReadURL)
     full = false;
 }
 
-/* Reader Thread*/
+                                            /* Reader Thread*/
 void* ReadControlFile(void *arg1 , void *arg2)
 {   
     Queue *fifo = (Queue *) arg1;
     char* file = (char *) arg2;
     
-    ifstream InputFD(file);
-    string line;
+    std::ifstream InputFD(file);
+    std::string line;
 
         if( InputFD.is_open())
         {
@@ -97,7 +100,7 @@ void* ReadControlFile(void *arg1 , void *arg2)
             {
                 char *line_C = strdup(line.c_str());
 
-                std::unique_lock<mutex> locker_getline(fifo->_mut_acces_qeue);
+                std::unique_lock<std::mutex> locker_getline(fifo->_mut_acces_qeue);
 
                 if(fifo->isFull())
                 {
@@ -122,7 +125,7 @@ void* ReadControlFile(void *arg1 , void *arg2)
             exit(EXIT_FAILURE);
         }
 
-        unique_lock<mutex> locker(fifo->_mut_acces_qeue);
+        std::unique_lock<std::mutex> locker(fifo->_mut_acces_qeue);
         fifo->EndTransmission();
 
         InputFD.close();
@@ -132,16 +135,16 @@ void* ReadControlFile(void *arg1 , void *arg2)
         return NULL;
 }
 
-/* Client Thread*/
+                                        /* Client Thread*/
 void* ContactServer(void *arg1, void *arg2)
 {
     Queue *fifo = ( Queue *) arg1;
     int *CLientNr = (int *) arg2;
-    string line;
+    std::string line;
 
     while(true)
     {
-        unique_lock<mutex> locker(fifo->_mut_acces_qeue);
+        std::unique_lock<std::mutex> locker(fifo->_mut_acces_qeue);
 
         if(fifo->TransmissionDone() == true && fifo->isEmpty() == true)
         {
@@ -151,7 +154,6 @@ void* ContactServer(void *arg1, void *arg2)
         
         else if(fifo->TransmissionDone() == false && fifo->isEmpty() == true)
         {
-            //printf("client %d : FIFO empty.\n",std::thread::id);
             printf("Client %d  : FIFO empty.\n",*CLientNr);
             fifo->notEmpty.wait(locker);
         }
@@ -214,20 +216,20 @@ int main(int argc, char *argv[]){
 
     char *timefile = argv[6];
     char *proxydelay = argv[3];
-  
+
+    printf("\n\t Transmission begins... \t\n");
 
     webreq_init(argc, argv);   
-
     clock_gettime(CLOCK_MONOTONIC,&before);
 
-    thread ReaderThread(ReadControlFile, &fifo, filename);
-    thread Clients[CLIENTAMOUNT];
+    std::thread ReaderThread(ReadControlFile, &fifo, filename);
+    std::thread Clients[CLIENTAMOUNT];
     int ClientNr[CLIENTAMOUNT];
 
     for(int i = 0; i < CLIENTAMOUNT; i++)
     {
         ClientNr[i] = i;
-        Clients[i] = thread(ContactServer,&fifo,&ClientNr[i]);
+        Clients[i] = std::thread(ContactServer,&fifo,&ClientNr[i]);
     }
 
     //Wait for threads to terminate execution
@@ -244,7 +246,7 @@ int main(int argc, char *argv[]){
     // free mem
     webreq_cleanup();
 
-    ofstream filetimefd (timefile, ios::app | ios::out);
+    std::ofstream filetimefd (timefile, std::ios::app | std::ios::out);
 
     if(filetimefd.is_open())
     {
@@ -252,6 +254,8 @@ int main(int argc, char *argv[]){
                    << ", Number of Threads: " << CLIENTAMOUNT 
                    << ", Elapsed time in ms : " << elapsed << std::endl;
         filetimefd.close();
+
+        printf("\n\t Transmission finished \t\n");
     }
     else
     {
